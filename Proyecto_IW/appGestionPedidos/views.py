@@ -1,19 +1,27 @@
-from django.shortcuts import render 
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, get_list_or_404
+from django.shortcuts import render, redirect
+from .models import Cliente, Pedido, Producto, Componente, ProductoPedido
+from django.views import View
+from django.views.generic import DetailView, ListView
+# from appGestionPedidos.forms import DepartamentoForm, EmpleadoForm #Todavia no hemos llegado, parte del formulario
+
 
 #___________________VISUALIZAR LISTA____________________
 
-def indexPedidos(request):
-    return HttpResponse("VISUALIZACIÓN PEDIDOS") #En "hola guapas" deberiamos poner el link a la pagina html
+class ClienteListView(ListView):
+    model = Cliente
 
-def indexCliente(request):
-    return HttpResponse("VISUALIZACIÓN CLIENTES")
+class PedidoListView(ListView):
+    model = Pedido
 
-def indexProducto(request):
-    return HttpResponse("VISUALIZACIÓN CLEINTES")
+class ProductoListView(ListView):
+    model = Producto
 
-def indexComponente(request):
-    return HttpResponse("VISUALIZACIÓN CLEINTES")
+class ComponenteListView(ListView):
+    model = Componente
+
+class ProductoPedidoDetailView(DetailView):
+    model = ProductoPedido
 
 
 

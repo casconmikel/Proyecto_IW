@@ -1,7 +1,7 @@
 from django.db import models
  
 class Cliente(models.Model):
-    CIF = models.IntegerField()
+    CIF = models.CharField(max_length=9)
     nombreEmpresa = models.CharField(max_length=16)
     direccion = models.CharField(max_length=60)
     datosContacto = models.CharField(max_length=60)
