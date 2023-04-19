@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+	        <h1 style="color:rgb(0, 81, 255)">Gestor de Pedidos</h1>
+            <h2>Menú:</h2>
+            <ul>
+                <li><a href="appGestionPedidos\templates\appGestionPedidos\cliente_list.html">Listado de clientes</a></li>
+                <li><a href="appGestionPedidos\templates\appGestionPedidos\pedido_list.html">Listado de pedidos</a></li>
+                <li><a href="appGestionPedidos\templates\appGestionPedidos\producto_list.html">Listado de productos</a></li>
+                <li><a href="appGestionPedidos\templates\appGestionPedidos\componente_list.html">Listado de componentes</a></li>
+                <li><a href="appGestionPedidos\templates\appGestionPedidos\productoPedido_list.html">Destalles de pedidos</a></li>
+            </ul>
+            <hr>
+        </header>
+        <main>
+            {% block contenido %}{% endblock %}
+        </main>
+        <footer>
+            <hr>
+            <p>Aplicación desarrollada en Ingeniería Web</p>
+        </footer>
+    </body>
+</html>

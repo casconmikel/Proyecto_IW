@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de clientes{% endblock %}
+
+{% block contenido %}
+    <h2>Listado de clientes</h2>
+    {% if cliente_list %}
+        <ul>
+        {% for cliente in cliente_list %}
+            <li>
+                <a href="/appGestionPedidos/cliente/{{ cliente.id }}">{{ cliente.nombre }}</a>. CIF: {{ cliente.CIF }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>No hay clientes creados.</p>
+    {% endif %}
+{% endblock %}
