@@ -1,0 +1,56 @@
+h1 {
+    color: blue;
+}
+
+a:link,
+a:visited {
+    color: rgb(39, 3, 243);
+    text-decoration: none;
+    font-size: larger;
+}
+
+nav {
+    text-decoration: none;
+
+}
+
+a :hover {
+    color: rgb(231, 172, 10);
+}
+
+
+nav :hover {
+    color: rgb(245, 11, 11);
+}
+
+p,
+li {
+    font-size: x-large;
+}
+
+li {
+    list-style: none;
+}
+
+table,
+th,
+td {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+table {
+    padding: 5px;
+    background-color: rgb(155, 124, 124);
+}
+
+th {
+    background-color: rgb(228, 211, 175);
+}
+
+td {
+    background-color: rgb(248, 246, 250);
+    padding: 3px;
+    text-align: center;
+}
