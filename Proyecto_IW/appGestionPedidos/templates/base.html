@@ -1,13 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
         <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
-        <link rel="icon" type="image/jfif" href="static\imagenes\fabicon.png">
+        <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
     </head>
     <body>
         <header>
-	        <h1 style="color:rgb(0, 81, 255)">Gestor de Pedidos</h1>
+	        <h1>Gestor de Pedidos</h1>
             <h2>Menú:</h2>
             <ul>
                 <li><a href="appGestionPedidos\templates\appGestionPedidos\cliente_list.html">Listado de clientes</a></li>
