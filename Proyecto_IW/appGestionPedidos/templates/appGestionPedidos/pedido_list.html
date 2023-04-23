@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de pedidos{% endblock %}
+
+{% block contenido %}
+    <h2>Listado de pedidos</h2>
+    {% if pedido_list %}
+        <ul>
+        {% for pedido in pedido_list %}
+            <li>
+                <a href="/appGestionPedidos/pedido_list/{{ pedido.id }}">{{ pedido.id }}</a>, Cliente: {{ pedido.cliente.nombreEmpresa }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>No hay pedidos creados.</p>
+    {% endif %}
+{% endblock %}

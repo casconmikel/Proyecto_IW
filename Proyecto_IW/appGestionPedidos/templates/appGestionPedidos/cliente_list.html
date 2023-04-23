@@ -8,7 +8,7 @@
         <ul>
         {% for cliente in cliente_list %}
             <li>
-                <a href="/appGestionPedidos/cliente/{{ cliente.id }}">{{ cliente.nombre }}</a>. CIF: {{ cliente.CIF }}
+                <a href="/appGestionPedidos/cliente_list/{{ cliente.id }}">{{ cliente.nombreEmpresa }}</a>, CIF: {{ cliente.CIF }}
             </li>
         {% endfor %}
         </ul>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de componentes{% endblock %}
+
+{% block contenido %}
+    <h2>Listado de componentes</h2>
+    {% if pedido_list %}
+        <ul>
+        {% for comonente in componente_list %}
+            <li>
+                <a href="/appGestionPedidos/componente_list/{{ comonente.id }}"></a>ID: {{ comonente.id }}, Nombre: {{ componente.nombre }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>No hay componentes creados.</p>
+    {% endif %}
+{% endblock %}

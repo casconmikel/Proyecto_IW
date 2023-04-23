@@ -3,12 +3,24 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
+
+    # URL INDEX (Defecto al iniciar)
+
     path('', views.ClienteListView.as_view(), name='index'), #Es provisional
-    path('cliente/<int:pk>', views.ClienteListView.as_view(), name='cliente'),
-    path('pedido/<int:pk>', views.PedidoListView.as_view(), name='pedido'),
-    path('producto/<int:pk>', views.ProductoListView.as_view(), name='producto'),
-    path('componente/<int:pk>', views.ComponenteListView.as_view(), name='componente'),
+
+    # URLs LISTAR
+    
+    path('cliente/list', views.ClienteListView.as_view(), name='cliente'),
+    path('pedido/list', views.PedidoListView.as_view(), name='pedido'),
+    path('producto/list', views.ProductoListView.as_view(), name='producto'),
+    path('componente/list', views.ComponenteListView.as_view(), name='componente'),
 
     path('detallesPedido/<int:pk>', views.ProductoPedidoDetailView.as_view(), name='detallesPedido'),
+
+    # URLs CREAR
+
+    # URLs BORRAR
+
+    # URLs MODIFICAR
 ]
 
