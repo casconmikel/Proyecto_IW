@@ -3,21 +3,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
         <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
         <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
     </head>
     <body>
-        <header>
-	        <h1>Gestor de Pedidos</h1>
-            <h2>Menú:</h2>
-            <ul>
-                <li><a href="/appGestionPedidos">Listado de clientes</a></li>
-                <li><a href="/appGestionPedidos/pedido/list">Listado de pedidos</a></li>
-                <li><a href="/appGestionPedidos/producto/list">Listado de productos</a></li>
-                <li><a href="/appGestionPedidos/componente/list">Listado de componentes</a></li>
-            </ul>
-            <hr>
+        <header class="header">
+            <div class="header_container">
+                <div class="header_logo"> 
+                    <a href="la_compañia.html"><img src="Imagenes\logo-tsk.png" alt="logo de la compañia"></a>
+                </div>
+                <nav class="header_navigation">
+                    <ul>
+                        <li><a href="/appGestionPedidos">Clientes</a></li>
+                        <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
+                        <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
+                        <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header_line"> 
+                <div class="header_line_blue"></div>
+                <div class="header_line_grey"></div>
+            </div>
         </header>
         <main>
             {% block contenido %}{% endblock %}
