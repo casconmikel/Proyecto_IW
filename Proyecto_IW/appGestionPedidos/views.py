@@ -1,12 +1,12 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
-from .models import Cliente, Pedido, Producto, Componente, ProductoPedido
 from django.views import View
 from django.views.generic import DetailView, ListView
-# from appGestionPedidos.forms import DepartamentoForm, EmpleadoForm #Todavia no hemos llegado, parte del formulario
+from .models import Cliente, Componente, Producto, Pedido, ProductoPedido
+from .forms import ClienteFrom, ComponenteForm, ProductoFrom, PedidoFrom, ProductoPedidoFrom
 
 
-#___________________VISUALIZAR LISTA____________________
+#___________________ VISUALIZAR LISTA ____________________
 
 class ClienteListView(ListView):
     model = Cliente
@@ -22,6 +22,29 @@ class ComponenteListView(ListView):
 
 class ProductoPedidoDetailView(DetailView):
     model = ProductoPedido
+
+#____________________ CREAR ____________________
+
+class ClienteCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        formulario = ClienteFrom()
+        context = {
+            'formulario': formulario
+        }
+        return render(request, 'appGestionPedidos/cliente_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        formulario = ClienteForm(request.POST) #NOS DA PROBLEMA, LO PILLA, NO SABEMOS PORQUE, REVISAR!!!
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect('appGestionPedidos/cliente_create.html')
+        return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
+
+
+
+
+
 
 
 
