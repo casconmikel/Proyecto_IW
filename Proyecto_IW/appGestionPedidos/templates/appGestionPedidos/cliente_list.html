@@ -11,6 +11,7 @@
                 <a href="/appGestionPedidos/cliente_list/{{ cliente.id }}">{{ cliente.nombreEmpresa }}</a>, CIF: {{ cliente.CIF }}
             </li>
         {% endfor %}
+        <a href="/appGestionPedidos/cliente/create">Crear cliente</a>
         </ul>
     {% else %}
     <p>No hay clientes creados.</p>

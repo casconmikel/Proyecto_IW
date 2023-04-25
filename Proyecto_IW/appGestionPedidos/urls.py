@@ -18,7 +18,7 @@ urlpatterns = [
     path('detallesPedido/<int:pk>', views.ProductoPedidoDetailView.as_view(), name='detallesPedido'),
 
     # URLs CREAR
-
+    path('cliente/create', views.ClienteCreateView.as_view(), name='cliente_create'),
     # URLs BORRAR
 
     # URLs MODIFICAR

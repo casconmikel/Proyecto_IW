@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView, ListView
 from .models import Cliente, Componente, Producto, Pedido, ProductoPedido
-from .forms import ClienteFrom, ComponenteForm, ProductoFrom, PedidoFrom, ProductoPedidoFrom
+from .forms import ClienteForm, ComponenteForm, ProductoForm, PedidoForm, ProductoPedidoForm
 
 
 #___________________ VISUALIZAR LISTA ____________________
@@ -28,18 +28,19 @@ class ProductoPedidoDetailView(DetailView):
 class ClienteCreateView(View):
 
     def get(self, request, *args, **kwargs):
-        formulario = ClienteFrom()
+        formulario = ClienteForm()
         context = {
             'formulario': formulario
         }
         return render(request, 'appGestionPedidos/cliente_create.html', context)
 
     def post(self, request, *args, **kwargs):
-        formulario = ClienteForm(request.POST) #NOS DA PROBLEMA, LO PILLA, NO SABEMOS PORQUE, REVISAR!!!
+        formulario = ClienteForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('appGestionPedidos/cliente_create.html')
+            return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
+
 
 
 
