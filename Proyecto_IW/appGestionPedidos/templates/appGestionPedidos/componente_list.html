@@ -4,11 +4,11 @@
 
 {% block contenido %}
     <h2>Listado de componentes</h2>
-    {% if pedido_list %}
+    {% if cmponente_list %}
         <ul>
-        {% for comonente in componente_list %}
+        {% for componente in componente_list %}
             <li>
-                <a href="/appGestionPedidos/componente_list/{{ comonente.id }}"></a>ID: {{ comonente.id }}, Nombre: {{ componente.nombre }}
+                <a href="/appGestionPedidos/componente_list/{{ componente.id }}"></a>ID: {{ componente.id }}, Nombre: {{ componente.nombre }}
             </li>
         {% endfor %}
         </ul>
