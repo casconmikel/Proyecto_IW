@@ -75,6 +75,22 @@ class ProductoCreateView(View):
         return render(request, 'appGestionPedidos/producto_create.html', {'formulario': formulario})
 
 
+class PedidoCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        formulario = PedidoForm()
+        context = {
+            'formulario': formulario
+        }
+        return render(request, 'appGestionPedidos/pedido_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        formulario = PedidoForm(request.POST) 
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect('pedido')
+        return render(request, 'appGestionPedidos/pedido_create.html', {'formulario': formulario})
+
 
 
 

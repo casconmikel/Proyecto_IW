@@ -11,6 +11,7 @@
                 <a href="/appGestionPedidos/pedido_list/{{ pedido.id }}">{{ pedido.id }}</a>, Cliente: {{ pedido.cliente.nombreEmpresa }}
             </li>
         {% endfor %}
+        <a href="/appGestionPedidos/pedido/create">Crear pedido</a>
         </ul>
     {% else %}
     <p>No hay pedidos creados.</p>
