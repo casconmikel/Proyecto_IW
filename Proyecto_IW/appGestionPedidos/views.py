@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from django.views import View
@@ -91,7 +92,23 @@ class PedidoCreateView(View):
             return redirect('pedido')
         return render(request, 'appGestionPedidos/pedido_create.html', {'formulario': formulario})
 
+#___________________ ELIMINAR ___________________
 
+class ClienteDeleteView(View):
+    def cliente_delete(request, id):
+        cliente = get_object_or_404(Cliente, id=id)
+        if request.method.lower() == 'post':
+            cliente.delete()
+            return HttpResponse('Delete success')
+        context = {'object': cliente}
+        return render(request, 'index', context)
+    
+#   OTRO METODO
+#   def cliente_delete(request, id):
+    #   cliente = get_object_or_404(Cliente, id=id)
+    #   cliente.delete()
+    #   return redirect('index')
+     
 
 
 

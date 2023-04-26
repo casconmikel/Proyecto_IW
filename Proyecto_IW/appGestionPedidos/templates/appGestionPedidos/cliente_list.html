@@ -9,6 +9,7 @@
         {% for cliente in cliente_list %}
             <li>
                 <a href="/appGestionPedidos/cliente_list/{{ cliente.id }}">{{ cliente.nombreEmpresa }}</a>, CIF: {{ cliente.CIF }}
+                <a href="/appGestionPedidos/cliente/delete/{{ cliente.id }}">BORRAR</a>,
             </li>
         {% endfor %}
         <a href="/appGestionPedidos/cliente/create">Crear cliente</a>
