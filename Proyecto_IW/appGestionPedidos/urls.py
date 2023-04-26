@@ -20,6 +20,7 @@ urlpatterns = [
     # URLs CREAR
     path('cliente/create', views.ClienteCreateView.as_view(), name='cliente_create'),
     path('componente/create', views.ComponenteCreateView.as_view(), name='componente_create'),
+    path('producto/create', views.ProductoCreateView.as_view(), name='producto_create'),
     # URLs BORRAR
 
     # URLs MODIFICAR

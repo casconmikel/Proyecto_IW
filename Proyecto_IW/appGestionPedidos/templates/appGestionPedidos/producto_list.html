@@ -11,6 +11,7 @@
                 <a href="/appGestionPedidos/producto_list/{{ producto.id }}">{{ producto.nombre }}</a>, categoria: {{ producto.categoria }}
             </li>
         {% endfor %}
+        <a href="/appGestionPedidos/producto/create">Crear producto</a>
         </ul>
     {% else %}
     <p>No hay prodcutos creados.</p>
