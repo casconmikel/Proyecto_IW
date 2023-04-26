@@ -94,40 +94,40 @@ class PedidoCreateView(View):
 
 #___________________ ELIMINAR ___________________
 
-class ClienteDeleteView(View):
-    def cliente_delete(request, id):
-        cliente = get_object_or_404(Cliente, id=id)
-        if request.method.lower() == 'post':
-            cliente.delete()
-            return HttpResponse('Delete success')
-        context = {'object': cliente}
-        return render(request, 'index', context)
+# class ClienteDeleteView(View):
+#     def cliente_delete(request, id):
+#         cliente = get_object_or_404(Cliente, id=id)
+#         if request.method.lower() == 'post':
+#             cliente.delete()
+#             return HttpResponse('Delete success')
+#         context = {'object': cliente}
+#         return render(request, 'index', context)
     
-#   OTRO METODO
-#   def cliente_delete(request, id):
-    #   cliente = get_object_or_404(Cliente, id=id)
-    #   cliente.delete()
-    #   return redirect('index')
+# OTRO METODO
+def cliente_delete(request, id):
+      cliente = get_object_or_404(Cliente, id=id)
+      cliente.delete()
+      return redirect('index')
      
 
 #___________________ Modificar ___________________
 
-class   ClienteModifyView(View):
-    def cliente_modify(request, id): 
+# class   ClienteModifyView(View):
+def cliente_modify(request, id): 
 
-        cliente = get_object_or_404(Cliente, id=id)
+    cliente = get_object_or_404(Cliente, id=id)
 
-        data = {
+    data = {
             'form': ClienteForm(instance=cliente)
         } 
         
-        if request.method == 'POST':
-            formulario = ClienteForm(data=request.POST, instance=cliente, files=request.FILES)
-            if cliente.is_valid(): 
-                cliente.save()
-                return redirect(to="index")
-            data("form") = cliente 
+    if request.method == 'POST':
+        formulario = ClienteForm(data=request.POST, instance=cliente, files=request.FILES)
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect("index")
+        data["form"] = formulario 
 
-        return render(request, 'appGestionPedidos/cliente_modify.html', data)
+    return render(request, 'appGestionPedidos/cliente_modify.html', data)
 
 

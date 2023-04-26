@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Modificar cliente {% endblock %}
+
+{% block contenido %}
+<h2>Moodificar cliente</h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="Modificar" />
+</form>
+
+{% endblock %}

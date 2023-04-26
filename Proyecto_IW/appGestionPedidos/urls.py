@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from . import views
+from .views import cliente_modify, cliente_delete
 
 urlpatterns = [
 
@@ -24,11 +25,11 @@ urlpatterns = [
     path('pedido/create', views.PedidoCreateView.as_view(), name='pedido_create'),
 
     # URLs BORRAR
-    path('cliente/delete/<int:id>', views.ClienteDeleteView.as_view(), name='cliente_delete'),
+    path('eliminar-cliente/<id>', cliente_delete, name='cliente_delete'),
     
 
     # URLs MODIFICAR
-    path('cliente/modify/<int:id>', views.ClienteModifyView.as_view(), name='cliente_modify'),
+    path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
 
 
 
