@@ -110,6 +110,24 @@ class ClienteDeleteView(View):
     #   return redirect('index')
      
 
+#___________________ Modificar ___________________
 
+class   ClienteModifyView(View):
+    def cliente_modify(request, id): 
+
+        cliente = get_object_or_404(Cliente, id=id)
+
+        data = {
+            'form': ClienteForm(instance=cliente)
+        } 
+        
+        if request.method == 'POST':
+            formulario = ClienteForm(data=request.POST, instance=cliente, files=request.FILES)
+            if cliente.is_valid(): 
+                cliente.save()
+                return redirect(to="index")
+            data("form") = cliente 
+
+        return render(request, 'appGestionPedidos/cliente_modify.html', data)
 
 

@@ -10,6 +10,7 @@
             <li>
                 <a href="/appGestionPedidos/cliente_list/{{ cliente.id }}">{{ cliente.nombreEmpresa }}</a>, CIF: {{ cliente.CIF }}
                 <a href="/appGestionPedidos/cliente/delete/{{ cliente.id }}">BORRAR</a>,
+                <a href="/appGestionPedidos/cliente/modify/{{ cliente.id }}">MODIFICAR</a>,
             </li>
         {% endfor %}
         <a href="/appGestionPedidos/cliente/create">Crear cliente</a>

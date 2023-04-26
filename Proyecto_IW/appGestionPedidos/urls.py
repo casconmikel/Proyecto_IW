@@ -25,9 +25,13 @@ urlpatterns = [
 
     # URLs BORRAR
     path('cliente/delete/<int:id>', views.ClienteDeleteView.as_view(), name='cliente_delete'),
-
-
+    
 
     # URLs MODIFICAR
-]
+    path('cliente/modify/<int:id>', views.ClienteModifyView.as_view(), name='cliente_modify'),
+
+
+
+
+]   
 
