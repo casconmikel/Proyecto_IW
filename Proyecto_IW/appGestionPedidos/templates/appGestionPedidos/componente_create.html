@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Nuevo componente {% endblock %}
+
+{% block contenido %}
+<h2>Nuevo componente</h2>
+
+<form action="{% url 'componente_create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="Nuevo componente" />
+</form>
+
+{% endblock %}

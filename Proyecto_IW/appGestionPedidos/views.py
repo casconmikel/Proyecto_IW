@@ -40,6 +40,23 @@ class ClienteCreateView(View):
             formulario.save()
             return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
+    
+    
+class ComponenteCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        formulario = ComponenteForm()
+        context = {
+            'formulario': formulario
+        }
+        return render(request, 'appGestionPedidos/componente_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        formulario = ComponenteForm(request.POST) 
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect('componente')
+        return render(request, 'appGestionPedidos/componente_create.html', {'formulario': formulario})
 
 
 
