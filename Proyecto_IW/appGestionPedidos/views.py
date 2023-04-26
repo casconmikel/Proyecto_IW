@@ -94,20 +94,25 @@ class PedidoCreateView(View):
 
 #___________________ ELIMINAR ___________________
 
-# class ClienteDeleteView(View):
-#     def cliente_delete(request, id):
-#         cliente = get_object_or_404(Cliente, id=id)
-#         if request.method.lower() == 'post':
-#             cliente.delete()
-#             return HttpResponse('Delete success')
-#         context = {'object': cliente}
-#         return render(request, 'index', context)
-    
-# OTRO METODO
 def cliente_delete(request, id):
       cliente = get_object_or_404(Cliente, id=id)
       cliente.delete()
       return redirect('index')
+
+def componente_delete(request, id):
+      componente = get_object_or_404(Componente, id=id)
+      componente.delete()
+      return redirect('componente')
+
+def producto_delete(request, id):
+      producto = get_object_or_404(Producto, id=id)
+      producto.delete()
+      return redirect('producto')
+
+def pedido_delete(request, id):
+      pedido = get_object_or_404(Pedido, id=id)
+      pedido.delete()
+      return redirect('pedido')
      
 
 #___________________ Modificar ___________________

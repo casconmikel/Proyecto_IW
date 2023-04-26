@@ -9,6 +9,7 @@
         {% for producto in producto_list %}
             <li>
                 <a href="/appGestionPedidos/producto_list/{{ producto.id }}">{{ producto.nombre }}</a>, categoria: {{ producto.categoria }}
+                <a href="/appGestionPedidos/eliminar-producto/{{ producto.id }}">BORRAR</a>,
             </li>
         {% endfor %}
         <a href="/appGestionPedidos/producto/create">Crear producto</a>

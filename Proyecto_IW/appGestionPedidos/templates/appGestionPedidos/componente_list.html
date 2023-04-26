@@ -9,6 +9,7 @@
         {% for componente in componente_list %}
             <li>
                 <a href="/appGestionPedidos/componente_list/{{ componente.id }}"></a>ID: {{ componente.id }}, Nombre: {{ componente.nombre }}
+                <a href="/appGestionPedidos/eliminar-componente/{{ componente.id }}">BORRAR</a>,
             </li>
         {% endfor %}
         <a href="/appGestionPedidos/componente/create">Crear compponente</a>
