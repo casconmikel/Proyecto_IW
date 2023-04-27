@@ -23,6 +23,7 @@ urlpatterns = [
     path('componente/create', views.ComponenteCreateView.as_view(), name='componente_create'),
     path('producto/create', views.ProductoCreateView.as_view(), name='producto_create'),
     path('pedido/create', views.PedidoCreateView.as_view(), name='pedido_create'),
+    path('productoPedido/create', views.ProductoPedidoCreateView.as_view(), name='productoPedido_create'),
 
     # URLs BORRAR
     path('eliminar-cliente/<id>', cliente_delete, name='cliente_delete'),

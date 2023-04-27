@@ -3,20 +3,41 @@
 {% block titulo %}Listado de clientes{% endblock %}
 
 {% block contenido %}
-    <h2>Listado de clientes</h2>
-    {% if cliente_list %}
-        <ul>
-        {% for cliente in cliente_list %}
-            <li>
-                <a href="/appGestionPedidos/cliente_list/{{ cliente.id }}">{{ cliente.nombreEmpresa }}</a>, CIF: {{ cliente.CIF }}
-                <a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a>,
-                <a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a>,
-            </li>
-        {% endfor %}
-        <a href="/appGestionPedidos/cliente/create">Crear cliente</a>
-        </ul>
-    {% else %}
-    <p>No hay clientes creados.</p>
+<h2>Listado de clientes</h2>
+{% if cliente_list %}
+<ul>
+    {% for cliente in cliente_list %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>CIF</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Contacto</th>
+                <th>Modificar</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>{{ cliente.CIF }}</td>
+                <td>{{ cliente.nombreEmpresa }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.datosContacto }}</td>
+                <td><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a>,</td>
+                <td><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a>,</td>
+                
+            </tr>
+        </tbody>
+    </table>
+   
+    {% endfor %}
     <a href="/appGestionPedidos/cliente/create">Crear cliente</a>
-    {% endif %}
+</ul>
+{% else %}
+<p>No hay clientes creados.</p>
+<a href="/appGestionPedidos/cliente/create">Crear cliente</a>
+{% endif %}
 {% endblock %}

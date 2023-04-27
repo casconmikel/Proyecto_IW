@@ -91,6 +91,22 @@ class PedidoCreateView(View):
             formulario.save()
             return redirect('pedido')
         return render(request, 'appGestionPedidos/pedido_create.html', {'formulario': formulario})
+    
+class ProductoPedidoCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        formulario = ProductoPedidoForm()
+        context = {
+            'formulario': formulario
+        }
+        return render(request, 'appGestionPedidos/productoPedido_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        formulario = ProductoPedidoForm(request.POST) 
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect('pedido')
+        return render(request, 'appGestionPedidos/productoPedido_create.html', {'formulario': formulario})
 
 #___________________ ELIMINAR ___________________
 

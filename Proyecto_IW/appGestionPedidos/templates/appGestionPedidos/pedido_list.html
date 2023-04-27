@@ -10,6 +10,7 @@
             <li>
                 <a href="/appGestionPedidos/pedido_list/{{ pedido.id }}">{{ pedido.id }}</a>, Cliente: {{ pedido.cliente.nombreEmpresa }}
                 <a href="/appGestionPedidos/eliminar-pedido/{{ pedido.id }}">BORRAR</a>,
+                <a href="/appGestionPedidos/productoPedido/create">Añadir informacion</a>
             </li>
         {% endfor %}
         <a href="/appGestionPedidos/pedido/create">Crear pedido</a>

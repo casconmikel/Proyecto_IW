@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Añadir productos a pedido {% endblock %}
+
+{% block contenido %}
+<h2>Añadir productos a pedido</h2>
+
+<form action="{% url 'productoPedido_create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="añadir productos" />
+</form>
+
+{% endblock %}

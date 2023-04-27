@@ -19,9 +19,9 @@ class ProductoForm(forms.ModelForm):
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = '__all__'
+        exclude= ['producto']
 
 class ProductoPedidoForm(forms.ModelForm):
     class Meta:
         model = ProductoPedido
-        fields = '__all__'
+        fields = ['idProducto', 'idPedido', 'cantidad']
