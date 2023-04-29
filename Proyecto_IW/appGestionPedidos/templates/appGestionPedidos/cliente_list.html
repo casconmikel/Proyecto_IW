@@ -1,43 +1,47 @@
+
 {% extends "base.html" %}
 
 {% block titulo %}Listado de clientes{% endblock %}
 
-{% block contenido %}
-<h2>Listado de clientes</h2>
-{% if cliente_list %}
-<ul>
-    {% for cliente in cliente_list %}
+{% load static %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>CIF</th>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Contacto</th>
-                <th>Modificar</th>
-                <th>Borrar</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <tr>
-                <td>{{ cliente.CIF }}</td>
-                <td>{{ cliente.nombreEmpresa }}</td>
-                <td>{{ cliente.direccion }}</td>
-                <td>{{ cliente.datosContacto }}</td>
-                <td><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a>,</td>
-                <td><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a>,</td>
-                
-            </tr>
-        </tbody>
-    </table>
-   
-    {% endfor %}
-    <a href="/appGestionPedidos/cliente/create">Crear cliente</a>
-</ul>
-{% else %}
-<p>No hay clientes creados.</p>
-<a href="/appGestionPedidos/cliente/create">Crear cliente</a>
+{% block contenido %}
+<div class="main_container">
+    <div class="main_title_container">
+        <div class="main_title">
+            <h2>LISTADO DE CLIENTES</h2>
+        </div>
+        <a href="appGestionPedidos\cliente_create.html"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_cliente"></a>   
+    </div>
+    <div class="main_table_container">
+        {% if cliente_list %}
+        <table class="main_table">
+            <thead>
+                <tr>
+                    <th>CIF</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Contacto</th>
+                    <th class="main_table_esp_1" colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            {% for cliente in cliente_list %}
+            <tbody class="main_table_contenido">
+                <tr>
+                    <td>{{ cliente.CIF }}</td>
+                    <td>{{ cliente.nombreEmpresa }}</td>
+                    <td>{{ cliente.direccion }}</td>
+                    <td>{{ cliente.datosContacto }}</td>
+                    <td class="main_table_esp_modificar"><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a></td>
+                    <td class="main_table_esp_borrar"><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No hay clientes creados.</p>
+    </div>
+</div>
+
 {% endif %}
 {% endblock %}
