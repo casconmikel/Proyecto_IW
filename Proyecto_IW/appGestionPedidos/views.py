@@ -22,7 +22,7 @@ class ComponenteListView(ListView):
     model = Componente
 
 class ProductoPedidoDetailView(DetailView):
-    model = ProductoPedido
+    model = Pedido
 
 #____________________ CREAR ____________________
 

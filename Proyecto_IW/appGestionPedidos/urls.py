@@ -31,10 +31,12 @@ urlpatterns = [
 
     # URLs MODIFICAR
     path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
+    path('modificar-pedido/<id>/', cliente_modify, name='cliente_modify'),
 
-    # URLs MODIFICAR
 
-    path('detallesPedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
+    # URLs DETALLE
+
+    path('detalle-pedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
 
 
 ]   
