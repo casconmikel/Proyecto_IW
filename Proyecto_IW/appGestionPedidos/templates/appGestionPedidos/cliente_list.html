@@ -6,12 +6,13 @@
 {% load static %}
 
 {% block contenido %}
+
 <div class="main_container">
     <div class="main_title_container">
         <div class="main_title">
             <h2>LISTADO DE CLIENTES</h2>
         </div>
-        <a href="appGestionPedidos\cliente_create.html"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_cliente"></a>   
+        <a href="/appGestionPedidos/cliente/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_cliente"></a>   
     </div>
     <div class="main_table_container">
         {% if cliente_list %}

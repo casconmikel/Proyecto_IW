@@ -2,21 +2,48 @@
 
 {% block titulo %}Listado de pedidos{% endblock %}
 
+{% load static %}
+
 {% block contenido %}
-    <h2>Listado de pedidos</h2>
-    {% if pedido_list %}
-        <ul>
-        {% for pedido in pedido_list %}
-            <li>
-                <a href="/appGestionPedidos/pedido_list/{{ pedido.id }}">{{ pedido.id }}</a>, Cliente: {{ pedido.cliente.nombreEmpresa }}
-                <a href="/appGestionPedidos/eliminar-pedido/{{ pedido.id }}">BORRAR</a>,
-                <a href="/appGestionPedidos/productoPedido/create">Añadir informacion</a>
-            </li>
-        {% endfor %}
-        <a href="/appGestionPedidos/pedido/create">Crear pedido</a>
-        </ul>
-    {% else %}
-    <p>No hay pedidos creados.</p>
-    <a href="/appGestionPedidos/pedido/create">Crear pedido</a>
-    {% endif %}
+
+<div class="main_container">
+    <div class="main_title_container">
+        <div class="main_title">
+            <h2>LISTADO DE PEDIDOS</h2>
+        </div>
+        <a href="/appGestionPedidos/pedido/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_pedido"></a>   
+    </div>
+    <div class="main_table_container">
+        {% if pedido_list %}
+        <table class="main_table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Referencia</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th class="main_table_esp_1" colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            {% for pedido in pedido_list %}
+            <tbody class="main_table_contenido">
+                <tr><a href="/appGestionPedidos/pedido/create"></a> 
+                    <!-- PENDIENTE DE REVISAR ARRIBA -->
+                    <td>{{ pedido.id }}</td>
+                    <td>{{ pedido.referencia }}</td>
+                    <td>{{ pedido.fecha }}</td>
+                    <td>{{ pedido.cliente }}</td>
+                    <td class="main_table_esp_modificar"><a href="/appGestionPedidos/modificar-pedido/{{ pedido.id }}">MODIFICAR</a></td>
+                    <td class="main_table_esp_borrar"><a href="/appGestionPedidos/eliminar-pedido/{{ pedido.id }}">BORRAR</a></td>
+                    <td><a href="/appGestionPedidos/detallesPedido/{{ pedido.id }}">DETALLES</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No hay pedidos creados.</p>
+    </div>
+</div>
+   
+{% endif %}
 {% endblock %}

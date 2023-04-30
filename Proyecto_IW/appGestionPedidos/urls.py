@@ -16,8 +16,6 @@ urlpatterns = [
     path('producto/list', views.ProductoListView.as_view(), name='producto'),
     path('componente/list', views.ComponenteListView.as_view(), name='componente'),
 
-    path('detallesPedido/<int:pk>', views.ProductoPedidoDetailView.as_view(), name='detallesPedido'),
-
     # URLs CREAR
     path('cliente/create', views.ClienteCreateView.as_view(), name='cliente_create'),
     path('componente/create', views.ComponenteCreateView.as_view(), name='componente_create'),
@@ -34,7 +32,9 @@ urlpatterns = [
     # URLs MODIFICAR
     path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
 
+    # URLs MODIFICAR
 
+    path('detallesPedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
 
 
 ]   
