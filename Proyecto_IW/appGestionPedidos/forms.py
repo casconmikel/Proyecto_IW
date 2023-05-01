@@ -2,6 +2,7 @@ from django import forms
 from .models import Cliente, Componente, Producto, Pedido, ProductoPedido
 
 class ClienteForm(forms.ModelForm):
+    
     class Meta:
         model = Cliente
         fields = '__all__'

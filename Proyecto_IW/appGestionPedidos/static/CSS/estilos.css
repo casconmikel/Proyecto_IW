@@ -175,6 +175,11 @@ header {
 
 /* MAIN_FORMULARIOS DE CREAR O MODIFICAR */
 
+.main_line_blue {
+    background-color: #2172b9;
+    height: 2.5px;
+}
+
 .main_form {
     padding: 35px 0px;
 }

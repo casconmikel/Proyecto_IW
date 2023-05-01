@@ -2,12 +2,34 @@
 
 {% block titulo %} Modificar cliente {% endblock %}
 
+{% load static %}
+
 {% block contenido %}
+
+<!-- PENDIENTE REVISAR -->
 
 <h2>Moodificar cliente.</h2>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form class="main_form" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    <fieldset class="main_form_container">
+        <div class="main_form_field">
+            <label>CIF:</label>
+            <input type="text" name="nombre" required>
+        </div>
+        <div class="main_form_field">
+            <label>Nombre Empresa:</label>
+            <input type="text" name="apellidos" required>
+        </div>
+        <div class="main_form_field">
+            <label>Dirección:</label>
+            <input type="text" name="apellidos" required>
+        </div>
+        <div class="main_form_field">
+            <label>Telefono:</label>
+            <input type="text" name="apellidos" required>
+        </div>
+    </fieldset>
     <input type="submit" value="Modificar" />
 </form>
 

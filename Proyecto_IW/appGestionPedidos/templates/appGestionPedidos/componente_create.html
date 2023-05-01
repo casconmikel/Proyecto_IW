@@ -2,14 +2,32 @@
 
 {% block titulo %} Nuevo componente {% endblock %}
 
+{% load static %}
+
 {% block contenido %}
-<h2>Nuevo componente</h2>
 
-<form action="{% url 'componente_create' %}" method="post">
-    {% csrf_token %}
-    {{ formulario.errors }}
-    {{ formulario.as_ul }}
-    <input type="submit" value="Nuevo componente" />
-</form>
+<div class="main_container">
+    <h2>Nuevo componente</h2>
+    <div class="main_line_blue"></div>
+    <form class="main_form" action="{% url 'componente_create' %}" method="post">
+        {% csrf_token %}
+        <fieldset class="main_form_container">
+            <div class="main_form_field">
+                <label>Referencia:</label>
+                <input type="number" name="Referencia" required>
+            </div>
+            <div class="main_form_field">
+                <label>Nombre:</label>
+                <input type="text" name="Nombre" required>
+            </div>
+            <div class="main_form_field">
+                <label>Marca:</label>
+                <input type="text" name="Marca" required>
+            </div>
+        </fieldset>
+        <input type="submit" value="Alta Nuevo Componente" />
+    </form>
+</div>
+   
 
-{% endblock %}
+{% endblock %}s
