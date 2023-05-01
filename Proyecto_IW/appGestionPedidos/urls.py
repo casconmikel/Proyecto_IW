@@ -31,8 +31,10 @@ urlpatterns = [
 
     # URLs MODIFICAR
     path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
+    path('modificar-pedido/<id>/', cliente_modify, name='cliente_modify'),
 
-    # URLs MODIFICAR
+
+    # URLs DETALLE
 
     path('detallesPedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
 

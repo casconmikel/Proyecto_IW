@@ -2,20 +2,44 @@
 
 {% block titulo %}Listado de componentes{% endblock %}
 
+{% load static %}
+
 {% block contenido %}
-    <h2>Listado de componentes</h2>
-    {% if componente_list %}
-        <ul>
-        {% for componente in componente_list %}
-            <li>
-                <a href="/appGestionPedidos/componente_list/{{ componente.id }}"></a>ID: {{ componente.id }}, Nombre: {{ componente.nombre }}
-                <a href="/appGestionPedidos/eliminar-componente/{{ componente.id }}">BORRAR</a>,
-            </li>
-        {% endfor %}
-        <a href="/appGestionPedidos/componente/create">Crear compponente</a>
-        </ul>
-    {% else %}
-    <p>No hay componentes creados.</p>4
-    <a href="/appGestionPedidos/componente/create">Crear compponente</a>
-    {% endif %}
+
+<div class="main_container">
+    <div class="main_title_container">
+        <div class="main_title">
+            <h2>LISTADO DE COMPONENTES</h2>
+        </div>
+        <a href="/appGestionPedidos/producto/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_cliente"></a>   
+    </div>
+    <div class="main_table_container">
+        {% if componente_list %}
+        <table class="main_table">
+            <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th class="main_table_esp_1" colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            {% for componente in componente_list %}
+            <tbody class="main_table_contenido">
+                <tr>
+                    <td>{{ componente.codigoReferencia }}</td>
+                    <td>{{ componente.nombreModelo }}</td>
+                    <td>{{ componente.marca }}</td>
+                    <td class="main_table_esp_modificar"><a href="/appGestionPedidos/modificar-componente/{{ producto.id }}">MODIFICAR</a></td>
+                    <td class="main_table_esp_borrar"><a href="/appGestionPedidos/eliminar-componente/{{ producto.id }}">BORRAR</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No hay componentes creados.</p>
+        {% endif %}
+    </div>
+</div>
+    
 {% endblock %}

@@ -2,13 +2,34 @@
 
 {% block titulo %} Nuevo cliente {% endblock %}
 
+{% load static %}
+
 {% block contenido %}
+
 <h2>Nuevo cliente</h2>
 
 <form action="{% url 'cliente_create' %}" method="post">
     {% csrf_token %}
-    {{ formulario.errors }}
-    {{ formulario.as_ul }}
+    <div class="main_form">
+        <fieldset class="main_form_container">
+            <div class="main_form_field">
+                <label>CIF:</label>
+                <input type="text" name="nombre" required>
+            </div>
+            <div class="main_form_field">
+                <label>Nombre Empresa:</label>
+                <input type="text" name="apellidos" required>
+            </div>
+            <div class="main_form_field">
+                <label>Dirección:</label>
+                <input type="text" name="apellidos" required>
+            </div>
+            <div class="main_form_field">
+                <label>Telefono:</label>
+                <input type="text" name="apellidos" required>
+            </div>
+        </fieldset>
+    </div>
     <input type="submit" value="Nuevo cliente" />
 </form>
 
