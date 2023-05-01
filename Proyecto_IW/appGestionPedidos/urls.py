@@ -36,7 +36,7 @@ urlpatterns = [
 
     # URLs DETALLE
 
-    path('detalle-pedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
+    path('detallesPedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
 
 
 ]   
