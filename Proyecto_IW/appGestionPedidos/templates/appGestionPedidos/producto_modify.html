@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block titulo %} Modificar producto {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="main_container">
+    <div class="main_create_title">
+        <h2>Modificar producto</h2>
+        <div class="main_line_blue"></div>
+    </div>
+    <form class="main_form" action="{% url 'producto_create' %}" method="post">
+        {% csrf_token %}
+        <div class="main_form_container">
+            <div class="main_form_field">
+                {{ formulario.referencia.errors }}
+                <label for="{{ formulario.referencia.id_for_label }}">Referencia: </label>
+                {{ formulario.referencia }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.precio.errors }}
+                <label for="{{ formulario.precio.id_for_label }}">Precio: </label>
+                {{ formulario.precio }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.nombre.errors }}
+                <label for="{{ formulario.nombre.id_for_label }}">Nombre: </label>
+                {{ formulario.nombre }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.descripcion.errors }}
+                <label for="{{ formulario.descripcion.id_for_label }}">Descripcion: </label>
+                {{ formulario.descripcion }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.categoria.errors }}
+                <label for="{{ formulario.categoria.id_for_label }}">Categoria: </label>
+                {{ formulario.categoria }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.componente.errors }}
+                <label for="{{ formulario.componente.id_for_label }}">Componente: </label>
+                {{ formulario.componente }}
+            </div>
+        </div>
+        <input type="submit" value="Registrar modificaciones" />
+    </form>
+</div>
+
+
+{% endblock %}

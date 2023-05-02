@@ -92,7 +92,7 @@ class PedidoCreateView(View):
         formulario = PedidoForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('detalles_Pedido')
+            return redirect('pedido')
         return render(request, 'appGestionPedidos/pedido_create.html', {'formulario': formulario})
     
 class ProductoPedidoCreateView(View):
@@ -108,7 +108,7 @@ class ProductoPedidoCreateView(View):
         formulario = ProductoPedidoForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('detallesPedido')
+            return redirect('pedido')
         return render(request, 'appGestionPedidos/productoPedido_create.html', {'formulario': formulario})
 
 #___________________ ELIMINAR ___________________
@@ -136,7 +136,7 @@ def pedido_delete(request, id):
 
 #___________________ Modificar ___________________
 
-# class   ClienteModifyView(View):
+
 def cliente_modify(request, id): 
 
     cliente = get_object_or_404(Cliente, id=id)
@@ -153,5 +153,56 @@ def cliente_modify(request, id):
         data["form"] = formulario 
 
     return render(request, 'appGestionPedidos/cliente_modify.html', data)
+
+def componente_modify(request, id): 
+
+    componente = get_object_or_404(Componente, id=id)
+
+    data = {
+            'form': ComponenteForm(instance=componente)
+        } 
+        
+    if request.method == 'POST':
+        formulario = ComponenteForm(data=request.POST, instance=componente, files=request.FILES)
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect("componente")
+        data["form"] = formulario 
+
+    return render(request, 'appGestionPedidos/componente_modify.html', data)
+
+def producto_modify(request, id): 
+
+    producto = get_object_or_404(Producto, id=id)
+
+    data = {
+            'form': ProductoForm(instance=producto)
+        } 
+        
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect("producto")
+        data["form"] = formulario 
+
+    return render(request, 'appGestionPedidos/producto_modify.html', data)
+
+def pedido_modify(request, id): 
+
+    pedido = get_object_or_404(Pedido, id=id)
+
+    data = {
+            'form': PedidoForm(instance=pedido)
+        } 
+        
+    if request.method == 'POST':
+        formulario = PedidoForm(data=request.POST, instance=pedido, files=request.FILES)
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect("pedido")
+        data["form"] = formulario 
+
+    return render(request, 'appGestionPedidos/pedido_modify.html', data)
 
 

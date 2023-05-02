@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %} modificar componente {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="main_container">
+    <div class="main_create_title">
+        <h2>Modificar componente</h2>
+        <div class="main_line_blue"></div>
+    </div>
+    <form class="main_form" action="{% url 'componente_create' %}" method="post">
+        {% csrf_token %}
+        <div class="main_form_container">
+            <div class="main_form_field">
+                {{ formulario.codigoReferencia.errors }}
+                <label for="{{ formulario.codigoReferencia.id_for_label }}">Referencia: </label>
+                {{ formulario.codigoReferencia }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.nombreModelo.errors }}
+                <label for="{{ formulario.nombreModelo.id_for_label }}">Nombre: </label>
+                {{ formulario.nombreModelo }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.marca.errors }}
+                <label for="{{ formulario.cliente.id_for_label }}">Marca: </label>
+                {{ formulario.marca }}
+            </div>
+        </div>
+        <input type="submit" value="Registrar modificacion" />
+    </form>
+</div>
+
+
+{% endblock %}s
