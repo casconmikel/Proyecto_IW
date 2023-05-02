@@ -22,13 +22,12 @@
                     <th>Referencia</th>
                     <th>Fecha</th>
                     <th>Cliente</th>
-                    <th class="main_table_esp_1" colspan="2">Opciones</th>
+                    <th class="main_table_esp_1" colspan="3">Opciones</th>
                 </tr>
             </thead>
             {% for pedido in pedido_list %}
             <tbody class="main_table_contenido">
                 <tr><a href="/appGestionPedidos/pedido/create"></a> 
-                    <!-- PENDIENTE DE REVISAR ARRIBA -->
                     <td>{{ pedido.id }}</td>
                     <td>{{ pedido.referencia }}</td>
                     <td>{{ pedido.fecha }}</td>

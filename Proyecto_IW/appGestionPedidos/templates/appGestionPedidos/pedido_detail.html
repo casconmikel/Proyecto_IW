@@ -12,7 +12,7 @@
         <div class="main_title">
             <h2>DETALLES DEL PEDIDO: {{ pedido.id }}</h2>
         </div>
-        <div>
+        <div class="main_title_detail">
             <ul>
                 <li>{{ pedido.referencia }}</li>
                 <li>{{ pedido.fecha }}</li>
@@ -21,6 +21,7 @@
                 <li>{{ pedido.precioTotal }}</li>
             </ul>
         </div>
+        <a href="/appGestionPedidos/productoPedido/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="Añadir productos al pedido"></a>   
     </div>
     {% if pedido.producto.all %}
     <div class="main_table_container">

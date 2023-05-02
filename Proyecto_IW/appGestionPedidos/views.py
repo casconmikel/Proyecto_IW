@@ -38,14 +38,7 @@ class ClienteCreateView(View):
     def post(self, request, *args, **kwargs):
         formulario = ClienteForm(request.POST) 
         if formulario.is_valid(): 
-
-            cliente = Cliente()
-            cliente.CIF = formulario.cleaned_data['CIF']
-            cliente.nombreEmpresa = formulario.cleaned_data['nombreEmpresa']
-            cliente.direccion = formulario.cleaned_data['direccion']
-            cliente.datosContacto = formulario.cleaned_data['datosContacto']
-            cliente.save()
-
+            formulario.save()
             return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
     
@@ -112,7 +105,7 @@ class ProductoPedidoCreateView(View):
         formulario = ProductoPedidoForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('pedido')
+            return redirect('detallesPedido')
         return render(request, 'appGestionPedidos/productoPedido_create.html', {'formulario': formulario})
 
 #___________________ ELIMINAR ___________________
