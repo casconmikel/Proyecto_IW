@@ -27,14 +27,14 @@
                 </tr>
             </thead>
             {% for cliente in cliente_list %}
-            <tbody class="main_table_contenido">
-                <tr>
+            <tbody>
+                <tr class="lista_cliente">
                     <td>{{ cliente.CIF }}</td>
                     <td>{{ cliente.nombreEmpresa }}</td>
                     <td>{{ cliente.direccion }}</td>
                     <td>{{ cliente.datosContacto }}</td>
-                    <td class="main_table_esp_modificar"><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a></td>
-                    <td class="main_table_esp_borrar"><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a></td>
+                    <td><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
+                    <td><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
                 </tr>
             </tbody>
             {% endfor %}
