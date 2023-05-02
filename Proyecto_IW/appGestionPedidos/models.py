@@ -41,6 +41,13 @@ class Pedido(models.Model):
 
     def __str__(self):
        return f"{self.id} - {self.fecha} - {self.cliente}" 
+    def obtener_cantidad(self):
+        cantidad = []
+        productoPedido = ProductoPedido.objects.filter(pedido_solicitado=self)
+        for i in productoPedido:
+            cantidad.append(i.cantidad)
+        return cantidad
+
 
  
 

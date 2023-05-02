@@ -24,6 +24,9 @@ class ComponenteListView(ListView):
 class ProductoPedidoDetailView(DetailView):
     model = Pedido
 
+class ProductoDetailView(DetailView):
+    model = Producto
+
 #____________________ CREAR ____________________
 
 class ClienteCreateView(View):
@@ -89,7 +92,7 @@ class PedidoCreateView(View):
         formulario = PedidoForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('pedido')
+            return redirect('detalles_Pedido')
         return render(request, 'appGestionPedidos/pedido_create.html', {'formulario': formulario})
     
 class ProductoPedidoCreateView(View):

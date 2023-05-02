@@ -32,6 +32,7 @@
                     <td>{{ producto.categoria }}</td>
                     <td><a href="/appGestionPedidos/modificar-producto/{{ producto.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
                     <td><a href="/appGestionPedidos/eliminar-producto/{{ producto.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
+                    <td><a lass="main_table_esp_borrar"href="/appGestionPedidos/detallesProducto/{{ producto.id }}">DETALLES</a></td>
                 </tr>
             </tbody>
             {% endfor %}

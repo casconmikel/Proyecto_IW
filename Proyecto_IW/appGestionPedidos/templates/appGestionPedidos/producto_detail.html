@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block titulo %}Detalles del pedido{% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+{% if producto %}
+<div class="main_container">
+    <div class="main_title_container">
+        <div class="main_title">
+            <h2>DETALLES DEL producto: {{ producto.id }}</h2>
+        </div>
+        <div class="main_title_detail">
+            <ul>
+                <li>{{ producto.referencia }}</li>
+                <li>{{ producto.nombre }}</li>
+                <li>{{ producto.categoria }}</li>
+            </ul>
+        </div>
+    </div>
+    {% if producto.componente %}
+    <div class="main_table_container">
+        <table class="main_table">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                    <th>Componente</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            {% for n in producto.componentes_set.all %}
+            <tbody class="main_table_contenido">
+                <tr>
+                    <td>{{ n.descripcion }}</td>
+                    <td>{{ n.componente }}</td>
+                    <td>{{ n.precio }}</td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <p>No hay detalles asociados al pedido.</p>
+    {% endif %}
+</div>
+{% else %}
+<p>No existe este pedidos</p>
+{% endif %}
+
+{% endblock %}

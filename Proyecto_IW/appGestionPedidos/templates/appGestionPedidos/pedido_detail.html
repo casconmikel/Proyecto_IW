@@ -34,13 +34,13 @@
                     <th>Precio Unitario</th>
                 </tr>
             </thead>
-            {% for producto in pedido.producto.all %}
+            {% for productoPedido in pedido.productopedido_set.all %}
             <tbody class="main_table_contenido">
                 <tr>
-                    <td>{{ producto.referencia }}</td>
-                    <td>{{ producto.nombre }}</td>
+                    <td>{{ productoPedido.idProducto.referencia }}</td>
+                    <td>{{ productoPedido.idProducto.nombre }}</td>
                     <td>{{ productoPedido.cantidad }}</td>
-                    <td>{{ producto.precio }}</td>
+                    <td>{{ productoPedido.idProducto.precio }}</td>
                 </tr>
             </tbody>
             {% endfor %}
