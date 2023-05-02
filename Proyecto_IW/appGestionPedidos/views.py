@@ -105,7 +105,7 @@ class ProductoPedidoCreateView(View):
         formulario = ProductoPedidoForm(request.POST) 
         if formulario.is_valid(): 
             formulario.save()
-            return redirect('pedido')
+            return redirect('detallesPedido')
         return render(request, 'appGestionPedidos/productoPedido_create.html', {'formulario': formulario})
 
 #___________________ ELIMINAR ___________________

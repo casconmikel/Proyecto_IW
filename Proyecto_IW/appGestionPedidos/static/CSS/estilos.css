@@ -106,6 +106,15 @@ header {
     letter-spacing: 1.5px;
 }
 
+
+
+.main_title_detail ul {
+    list-style: none; 
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
 /* MAIN_TABLAS DE LISTAR */
 
 .main_table_container {

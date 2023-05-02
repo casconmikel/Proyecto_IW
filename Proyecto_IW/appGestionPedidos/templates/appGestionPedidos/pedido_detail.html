@@ -12,17 +12,18 @@
         <div class="main_title">
             <h2>DETALLES DEL PEDIDO: {{ pedido.id }}</h2>
         </div>
-        <div>
+        <div class="main_title_detail">
             <ul>
                 <li>{{ pedido.referencia }}</li>
                 <li>{{ pedido.fecha }}</li>
-                <li>{{ cliente.CIF }}</li>
-                <li>{{ cliente.nombreEmpresa }}</li>
+                <li>{{ pedido.cliente.CIF }}</li>
+                <li>{{ pedido.cliente.nombreEmpresa }}</li>
                 <li>{{ pedido.precioTotal }}</li>
             </ul>
         </div>
+        <a href="/appGestionPedidos/productoPedido/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="Añadir productos al pedido"></a>   
     </div>
-    {% if productoPedido %}
+    {% if pedido.producto.all %}
     <div class="main_table_container">
         <table class="main_table">
             <thead>
@@ -33,7 +34,7 @@
                     <th>Precio Unitario</th>
                 </tr>
             </thead>
-            {% for productoPedido in pedido_detail %}
+            {% for producto in pedido.producto.all %}
             <tbody class="main_table_contenido">
                 <tr>
                     <td>{{ producto.referencia }}</td>
