@@ -11,7 +11,7 @@
         <div class="main_title">
             <h2>LISTADO DE COMPONENTES</h2>
         </div>
-        <a href="/appGestionPedidos/componente/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="crear_cliente"></a>   
+        <a href="/appGestionPedidos/componente/create" alt="crear_cliente">AÑADIR COMPONENTE</a>   
     </div>
     <div class="main_table_container">
         {% if componente_list %}
@@ -32,7 +32,10 @@
                     <td>{{ componente.marca }}</td>
                     <td><a href="/appGestionPedidos/modificar-componente/{{ componente.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
                     <td><a href="/appGestionPedidos/eliminar-componente/{{ componente.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
+<<<<<<< HEAD
                     
+=======
+>>>>>>> 5889d752cb4fffeff415988b1b992bbc9b682c12
                 </tr>
             </tbody>
             {% endfor %}
