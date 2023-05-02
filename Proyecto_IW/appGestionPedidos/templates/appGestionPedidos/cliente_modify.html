@@ -6,32 +6,37 @@
 
 {% block contenido %}
 
-<!-- PENDIENTE REVISAR -->
+<div class="main_container">
+    <div class="main_title">
+        <h2>Modificar cliente</h2>
+        <div class="main_line_blue"></div>
+    </div>
+    <form class="main_form" action="{% url 'cliente_create' %}" method="post">
+        {% csrf_token %}
+        <div class="main_form_container">
+            <div class="main_form_field">
+                {{ formulario.CIF.errors }}
+                <label for="{{ formulario.CIF.id_for_label }}">CIF: </label>
+                {{ formulario.CIF }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.nombreEmpresa.errors }}
+                <label for="{{ formulario.nombreEmpresa.id_for_label }}">Nombre de la empresa: </label>
+                {{ formulario.nombreEmpresa }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.direccion.errors }}
+                <label for="{{ formulario.direccion.id_for_label }}">Dirección: </label>
+                {{ formulario.direccion }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.datosContacto.errors }}
+                <label for="{{ formulario.datosContacto.id_for_label }}">Telefono: </label>
+                {{ formulario.datosContacto }}
+            </div>
+        </div>
+        <input type="submit" value="Comfirmar cambios de cliente" />
+    </form>
+</div>
 
-<h2>Moodificar cliente.</h2>
-
-<form class="main_form" action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <fieldset class="main_form_container">
-        <div class="main_form_field">
-            <label>CIF:</label>
-            <input type="text" name="nombre" required>
-        </div>
-        <div class="main_form_field">
-            <label>Nombre Empresa:</label>
-            <input type="text" name="apellidos" required>
-        </div>
-        <div class="main_form_field">
-            <label>Dirección:</label>
-            <input type="text" name="apellidos" required>
-        </div>
-        <div class="main_form_field">
-            <label>Telefono:</label>
-            <input type="text" name="apellidos" required>
-        </div>
-    </fieldset>
-    <input type="submit" value="Modificar" />
-</form>
-
-<h1>esto parece que funciona</h1>
 {% endblock %}

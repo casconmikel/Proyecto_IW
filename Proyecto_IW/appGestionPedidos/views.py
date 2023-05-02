@@ -38,7 +38,14 @@ class ClienteCreateView(View):
     def post(self, request, *args, **kwargs):
         formulario = ClienteForm(request.POST) 
         if formulario.is_valid(): 
-            formulario.save()
+
+            cliente = Cliente()
+            cliente.CIF = formulario.cleaned_data['CIF']
+            cliente.nombreEmpresa = formulario.cleaned_data['nombreEmpresa']
+            cliente.direccion = formulario.cleaned_data['direccion']
+            cliente.datosContacto = formulario.cleaned_data['datosContacto']
+            cliente.save()
+
             return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
     

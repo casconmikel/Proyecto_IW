@@ -31,7 +31,7 @@ urlpatterns = [
 
     # URLs MODIFICAR
     path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
-    path('modificar-pedido/<id>/', cliente_modify, name='cliente_modify'),
+    # path('modificar-pedido/<id>/', pedido_modify, name='pedido_modify'),
 
 
     # URLs DETALLE

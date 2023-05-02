@@ -2,16 +2,41 @@
 
 {% block titulo %} Nuevo pedido {% endblock %}
 
+{% load static %}
+
 {% block contenido %}
-<h2>Nuevo pedido</h2>
 
-<form action="{% url 'pedido_create' %}" method="post">
-    {% csrf_token %}
-    {{ formulario.errors }}
-    {{ formulario.as_ul }}
-    <input type="submit" value="Nuevo pedido" />
-</form>
-
-
+<div class="main_container">
+    <div class="main_create_title">
+        <h2>Nuevo pedido</h2>
+        <div class="main_line_blue"></div>
+    </div>
+    <form class="main_form" action="{% url 'pedido_create' %}" method="post">
+        {% csrf_token %}
+        <div class="main_form_container">
+            <div class="main_form_field">
+                {{ formulario.referencia.errors }}
+                <label for="{{ formulario.referencia.id_for_label }}">Referencia: </label>
+                {{ formulario.referencia }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.fecha.errors }}
+                <label for="{{ formulario.fecha.id_for_label }}">Fecha: </label>
+                {{ formulario.fecha }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.cliente.errors }}
+                <label for="{{ formulario.cliente.id_for_label }}">Cliente: </label>
+                {{ formulario.cliente }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.precioTotal.errors }}
+                <label for="{{ formulario.precioTotal.id_for_label }}">Precio total: </label>
+                {{ formulario.precioTotal }}
+            </div>
+        </div>
+        <input type="submit" value="Registrar nuevo pedido" />
+    </form>
+</div>
 
 {% endblock %}
