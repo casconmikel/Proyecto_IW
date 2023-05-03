@@ -7,7 +7,7 @@ urlpatterns = [
 
     # URL INDEX (Defecto al iniciar)
 
-    path('', views.ClienteListView.as_view(), name='index'), #Es provisional
+    path('', views.ClienteListView.as_view(), name='index'),
 
     # URLs LISTAR
     

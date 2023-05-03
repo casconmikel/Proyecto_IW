@@ -12,15 +12,6 @@
         <div class="main_title">
             <h2>DETALLES DEL PEDIDO: {{ pedido.id }}</h2>
         </div>
-        <div class="main_title_detail">
-            <ul>
-                <li>{{ pedido.referencia }}</li>
-                <li>{{ pedido.fecha }}</li>
-                <li>{{ pedido.cliente.CIF }}</li>
-                <li>{{ pedido.cliente.nombreEmpresa }}</li>
-                <li>{{ pedido.precioTotal }}</li>
-            </ul>
-        </div>
         <a href="/appGestionPedidos/productoPedido/create" alt="crear_cliente">ASOCIAR PRODUCTO</a>   
     </div>
     {% if pedido.producto.all %}

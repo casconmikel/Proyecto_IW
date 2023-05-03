@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from django.views import View
@@ -138,7 +137,7 @@ def productoPedido_delete(request, id):
       return redirect('pedido')
      
 
-#___________________ Modificar ___________________
+#___________________ MODIFICAR ___________________
 
 
 def cliente_modify(request, id): 

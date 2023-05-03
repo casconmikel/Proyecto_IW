@@ -8,7 +8,7 @@ class Cliente(models.Model):
     datosContacto = models.CharField(max_length=60)
 
     def __str__(self):
-       return f"{self.id} - {self.CIF} - {self.nombreEmpresa}" 
+       return f"{self.CIF} - {self.nombreEmpresa}" 
 
 
 class Componente(models.Model): 
@@ -48,8 +48,6 @@ class Pedido(models.Model):
             cantidad.append(i.cantidad)
         return cantidad
 
-
- 
 
 class ProductoPedido(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
