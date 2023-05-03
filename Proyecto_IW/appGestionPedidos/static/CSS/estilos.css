@@ -198,11 +198,26 @@ header {
 }
 
 .main_table_esp_modificar a {
-    background: rgba(255, 255, 0, 0.59);
+    font-size: medium;
+    font-weight: 800;
+    color: #b7a52c;
+    font-family: sans-serif;
+    border-radius: 15px;
 }
 
 .main_table_esp_borrar a {
-    background-color: rgba(255, 0, 0, 0.59);
+    font-size: medium;
+    font-weight: 800;
+    color:#ef0909af;
+    font-family: sans-serif;
+}
+
+.main_table_esp_detalles a {
+    font-size: medium;
+    font-weight: 800;
+    color:#52ae11;
+    font-family: sans-serif;
+    border-radius: 15px;
 }
 
 /* MAIN_FORMULARIOS DE CREAR O MODIFICAR */

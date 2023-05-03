@@ -32,9 +32,15 @@
                     <td>{{ pedido.referencia }}</td>
                     <td>{{ pedido.fecha }}</td>
                     <td>{{ pedido.cliente }}</td>
-                    <td><a href="/appGestionPedidos/modificar-pedido/{{ pedido.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
-                    <td ><a href="/appGestionPedidos/eliminar-pedido/{{ pedido.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
-                    <td><a lass="main_table_esp_borrar"href="/appGestionPedidos/detallesPedido/{{ pedido.id }}">DETALLES</a></td>
+                    <td class="main_table_esp_modificar">
+                        <button><a href="/appGestionPedidos/modificar-pedido/{{ pedido.id }}">MODIFICAR</a></button>
+                    </td>
+                    <td class="main_table_esp_borrar">
+                        <button><a href="/appGestionPedidos/eliminar-pedido/{{ pedido.id }}">BORRAR</a></button>
+                    </td>
+                    <td class="main_table_esp_detalles">
+                        <button><a href="/appGestionPedidos/detallesPedido/{{ pedido.id }}">DETALLES</a></button>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}

@@ -214,7 +214,7 @@ def productoPedido_modify(request, id):
     productoPedido = get_object_or_404(ProductoPedido, id=id)
 
     data = {
-            'formulario': ProductoPedido(instance=productoPedido)
+            'formulario': ProductoPedidoForm(instance=productoPedido)
         } 
         
     if request.method == 'POST':

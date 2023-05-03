@@ -20,7 +20,7 @@
                     <th>Referencia</th>
                     <th>Nombre</th>
                     <th>Categoria</th>
-                    <th class="main_table_esp_1" colspan="2">Opciones</th>
+                    <th class="main_table_esp_1" colspan="3">Opciones</th>
                 </tr>
             </thead>
             {% for producto in producto_list %}
@@ -29,9 +29,15 @@
                     <td>{{ producto.referencia }}</td>
                     <td>{{ producto.nombre }}</td>
                     <td>{{ producto.categoria }}</td>
-                    <td><a href="/appGestionPedidos/modificar-producto/{{ producto.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
-                    <td><a href="/appGestionPedidos/eliminar-producto/{{ producto.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
-                    <td><a lass="main_table_esp_borrar"href="/appGestionPedidos/detallesProducto/{{ producto.id }}">DETALLES</a></td>
+                    <td class="main_table_esp_modificar">
+                        <button><a href="/appGestionPedidos/modificar-producto/{{ producto.id }}">MODIFICAR</a></button>
+                    </td>
+                    <td class="main_table_esp_borrar">
+                        <button><a href="/appGestionPedidos/eliminar-producto/{{ producto.id }}">BORRAR</a></button>
+                    </td>
+                    <td class="main_table_esp_detalles">
+                        <button><a href="/appGestionPedidos/detallesProducto/{{ producto.id }}">DETALLES</a></button>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}

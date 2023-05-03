@@ -28,13 +28,17 @@
             </thead>
             {% for cliente in cliente_list %}
             <tbody>
-                <tr class="lista_cliente">
+                <tr>
                     <td>{{ cliente.CIF }}</td>
                     <td>{{ cliente.nombreEmpresa }}</td>
                     <td>{{ cliente.direccion }}</td>
                     <td>{{ cliente.datosContacto }}</td>
-                    <td><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
-                    <td><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
+                    <td class="main_table_esp_modificar">
+                        <button><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a></button>
+                    </td>
+                    <td class="main_table_esp_borrar">
+                        <button><a href="/appGestionPedidos/eliminar-cliente/{{ cliente.id }}">BORRAR</a></button>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}

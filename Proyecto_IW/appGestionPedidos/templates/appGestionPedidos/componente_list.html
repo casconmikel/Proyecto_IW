@@ -30,8 +30,12 @@
                     <td>{{ componente.codigoReferencia }}</td>
                     <td>{{ componente.nombreModelo }}</td>
                     <td>{{ componente.marca }}</td>
-                    <td><a href="/appGestionPedidos/modificar-componente/{{ componente.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
-                    <td><a href="/appGestionPedidos/eliminar-componente/{{ componente.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
+                    <td class="main_table_esp_modificar">
+                        <button><a href="/appGestionPedidos/modificar-componente/{{ componente.id }}">MODIFICAR</a></button>
+                    </td>
+                    <td class="main_table_esp_borrar">
+                        <button><a href="/appGestionPedidos/eliminar-componente/{{ componente.id }}">BORRAR</a></button>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}

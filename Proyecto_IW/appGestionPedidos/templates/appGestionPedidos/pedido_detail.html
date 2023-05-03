@@ -21,7 +21,7 @@
                 <li>{{ pedido.precioTotal }}</li>
             </ul>
         </div>
-        <a href="/appGestionPedidos/productoPedido/create"><img src="{% static 'imagenes\crear_cliente_2.png' %}" alt="Añadir productos al pedido"></a>   
+        <a href="/appGestionPedidos/productoPedido/create" alt="crear_cliente">ASOCIAR PRODUCTO</a>   
     </div>
     {% if pedido.producto.all %}
     <div class="main_table_container">
@@ -32,6 +32,7 @@
                     <th>Nombre Producto</th>
                     <th>Cantidad</th>
                     <th>Precio Unitario</th>
+                    <th class="main_table_esp_1" colspan="2">Opciones</th>
                 </tr>
             </thead>
             {% for productoPedido in pedido.productopedido_set.all %}
@@ -41,10 +42,12 @@
                     <td>{{ productoPedido.idProducto.nombre }}</td>
                     <td>{{ productoPedido.cantidad }}</td>
                     <td>{{ productoPedido.idProducto.precio }}</td>
-                    <td><a href="/appGestionPedidos/modificar-productoPedido/{{ productoPedido.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
-                    <td ><a href="/appGestionPedidos/eliminar-productoPedido/{{ productoPedido.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
-
-                
+                    <td class="main_table_esp_modificar">
+                        <button><a href="/appGestionPedidos/modificar-productoPedido/{{ productoPedido.id }}">MODIFICAR</a></button>
+                    </td>
+                    <td class="main_table_esp_borrar">
+                        <button><a href="/appGestionPedidos/eliminar-productoPedido/{{ productoPedido.id }}">BORRAR</a></button>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}
