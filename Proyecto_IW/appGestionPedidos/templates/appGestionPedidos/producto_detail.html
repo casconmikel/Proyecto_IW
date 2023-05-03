@@ -20,7 +20,7 @@
             </ul>
         </div>
     </div>
-    {% if producto.componente %}
+    {% if producto.componente.all %}
     <div class="main_table_container">
         <table class="main_table">
             <thead>
@@ -30,13 +30,12 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            {% for n in producto.componentes_set.all %}
+            {% for producto in producto.componente_set.all %}
             <tbody class="main_table_contenido">
                 <tr>
-                    <td>{{ n.descripcion }}</td>
-                    <td>{{ n.componente }}</td>
-                    <td>{{ n.precio }}</td>
-                    
+                    <td>{{ producto.descripcion }}</td>
+                    <td>{{ producto.componente }}</td>
+                    <td>{{ producto.precio }}</td>
                 </tr>
             </tbody>
             {% endfor %}

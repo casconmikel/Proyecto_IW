@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from . import views
-from .views import cliente_modify, cliente_delete, componente_delete, producto_delete, pedido_delete, componente_modify, producto_modify, pedido_modify 
+from .views import cliente_modify, cliente_delete, productoPedido_delete, componente_delete, producto_delete, pedido_delete, componente_modify, producto_modify, pedido_modify, productoPedido_modify 
 
 urlpatterns = [
 
@@ -28,12 +28,15 @@ urlpatterns = [
     path('eliminar-componente/<id>', componente_delete, name='componente_delete'),
     path('eliminar-producto/<id>', producto_delete, name='producto_delete'),
     path('eliminar-pedido/<id>', pedido_delete, name='pedido_delete'),
+    path('eliminar-productoPedido/<id>', productoPedido_delete, name='productoPedido_delete'),
+
 
     # URLs MODIFICAR
     path('modificar-cliente/<id>/', cliente_modify, name='cliente_modify'),
     path('modificar-componente/<id>/', componente_modify, name='componente_modify'),
     path('modificar-producto/<id>/', producto_modify, name='producto_modify'),
     path('modificar-pedido/<id>/', pedido_modify, name='pedido_modify'),
+    path('modificar-productoPedido/<id>/', productoPedido_modify, name='productoPedido_modify'),
 
     # URLs DETALLES
 

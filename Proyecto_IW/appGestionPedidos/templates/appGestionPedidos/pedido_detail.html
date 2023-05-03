@@ -41,6 +41,10 @@
                     <td>{{ productoPedido.idProducto.nombre }}</td>
                     <td>{{ productoPedido.cantidad }}</td>
                     <td>{{ productoPedido.idProducto.precio }}</td>
+                    <td><a href="/appGestionPedidos/modificar-productoPedido/{{ productoPedido.id }}"><img src="{% static 'imagenes\boton_modificar.png' %}" alt="boton_modificar"></a></td>
+                    <td ><a href="/appGestionPedidos/eliminar-productoPedido/{{ productoPedido.id }}"><img src="{% static 'imagenes\boton_borrar.png' %}" alt="boton_borrar"></a></td>
+
+                
                 </tr>
             </tbody>
             {% endfor %}

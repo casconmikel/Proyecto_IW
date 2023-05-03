@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %} Añadir productos a pedido {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="main_container">
+    <div class="main_create_title">
+        <h2>Asociar productos a pedidos</h2>
+        <div class="main_line_blue"></div>
+    </div>
+    <form class="main_form" action="{% url 'productoPedido_create' %}" method="post">
+        {% csrf_token %}
+        <div class="main_form_container">
+            <div class="main_form_field">
+                {{ formulario.idProducto.errors }}
+                <label for="{{ formulario.idProducto.id_for_label }}">Producto: </label>
+                {{ formulario.idProducto }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.idPedido.errors }}
+                <label for="{{ formulario.idPedido.id_for_label }}">Pedido: </label>
+                {{ formulario.idPedido }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.cantidad.errors }}
+                <label for="{{ formulario.cantidad.id_for_label }}">Cantidad: </label>
+                {{ formulario.cantidad }}
+            </div>
+        </div>
+        <input type="submit" value="Asociar productos" />
+    </form>
+
+</div>
+
+{% endblock %}

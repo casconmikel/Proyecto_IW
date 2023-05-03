@@ -132,6 +132,10 @@ def pedido_delete(request, id):
       pedido = get_object_or_404(Pedido, id=id)
       pedido.delete()
       return redirect('pedido')
+def productoPedido_delete(request, id):
+      productoPedido = get_object_or_404(ProductoPedido, id=id)
+      productoPedido.delete()
+      return redirect('pedido')
      
 
 #___________________ Modificar ___________________
@@ -142,7 +146,7 @@ def cliente_modify(request, id):
     cliente = get_object_or_404(Cliente, id=id)
 
     data = {
-            'form': ClienteForm(instance=cliente)
+            'formulario': ClienteForm(instance=cliente)
         } 
         
     if request.method == 'POST':
@@ -150,7 +154,7 @@ def cliente_modify(request, id):
         if formulario.is_valid(): 
             formulario.save()
             return redirect("index")
-        data["form"] = formulario 
+        data["formulario"] = formulario 
 
     return render(request, 'appGestionPedidos/cliente_modify.html', data)
 
@@ -159,7 +163,7 @@ def componente_modify(request, id):
     componente = get_object_or_404(Componente, id=id)
 
     data = {
-            'form': ComponenteForm(instance=componente)
+            'formulario': ComponenteForm(instance=componente)
         } 
         
     if request.method == 'POST':
@@ -167,7 +171,7 @@ def componente_modify(request, id):
         if formulario.is_valid(): 
             formulario.save()
             return redirect("componente")
-        data["form"] = formulario 
+        data["formulario"] = formulario 
 
     return render(request, 'appGestionPedidos/componente_modify.html', data)
 
@@ -176,7 +180,7 @@ def producto_modify(request, id):
     producto = get_object_or_404(Producto, id=id)
 
     data = {
-            'form': ProductoForm(instance=producto)
+            'formulario': ProductoForm(instance=producto)
         } 
         
     if request.method == 'POST':
@@ -184,7 +188,7 @@ def producto_modify(request, id):
         if formulario.is_valid(): 
             formulario.save()
             return redirect("producto")
-        data["form"] = formulario 
+        data["formulario"] = formulario 
 
     return render(request, 'appGestionPedidos/producto_modify.html', data)
 
@@ -193,7 +197,7 @@ def pedido_modify(request, id):
     pedido = get_object_or_404(Pedido, id=id)
 
     data = {
-            'form': PedidoForm(instance=pedido)
+            'formulario': PedidoForm(instance=pedido)
         } 
         
     if request.method == 'POST':
@@ -201,8 +205,25 @@ def pedido_modify(request, id):
         if formulario.is_valid(): 
             formulario.save()
             return redirect("pedido")
-        data["form"] = formulario 
+        data["formulario"] = formulario 
 
     return render(request, 'appGestionPedidos/pedido_modify.html', data)
+
+def productoPedido_modify(request, id): 
+
+    productoPedido = get_object_or_404(ProductoPedido, id=id)
+
+    data = {
+            'formulario': ProductoPedido(instance=productoPedido)
+        } 
+        
+    if request.method == 'POST':
+        formulario = PedidoForm(data=request.POST, instance=productoPedido, files=request.FILES)
+        if formulario.is_valid(): 
+            formulario.save()
+            return redirect("pedido")
+        data["formulario"] = formulario 
+
+    return render(request, 'appGestionPedidos/productoPedido_modify.html', data)
 
 
