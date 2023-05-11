@@ -18,14 +18,21 @@ class Componente(models.Model):
 
     def __str__(self):
        return f"{self.id} - {self.codigoReferencia} - {self.nombreModelo}"
+    
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=16)
+
+    def __str__(self):
+       return f"{self.nombre}" 
+    
 
 class Producto(models.Model):
     referencia = models.IntegerField(unique=True)
     precio = models.FloatField()
     nombre = models.CharField(max_length=16)
     descripcion = models.CharField(max_length=60)
-    categoria = models.CharField(max_length=16)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     componente = models.ManyToManyField(Componente) 
 
     def __str__(self):
@@ -54,10 +61,12 @@ class ProductoPedido(models.Model):
     idPedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
 
-
     def __str__(self):
        return f"{self.id} - {self.idProducto} - {self.idPedido} - {self.cantidad}" 
     
 
-    
+
+
+
+
     

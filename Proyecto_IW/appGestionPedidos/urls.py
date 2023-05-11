@@ -41,8 +41,6 @@ urlpatterns = [
     # URLs DETALLES
 
     path('detallesPedido/<int:pk>/', views.ProductoPedidoDetailView.as_view(), name='detalles_Pedido'),
-    path('detallesProducto/<int:pk>/', views.ProductoDetailView.as_view(), name='detalles_Producto'),
-
 
 ]   
 

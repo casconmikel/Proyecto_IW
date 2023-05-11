@@ -19,8 +19,9 @@
                 <tr>
                     <th>Referencia</th>
                     <th>Nombre</th>
+                    <th>Precio</th>
                     <th>Categoria</th>
-                    <th class="main_table_esp_1" colspan="3">Opciones</th>
+                    <th class="main_table_esp_1" colspan="2">Opciones</th>
                 </tr>
             </thead>
             {% for producto in producto_list %}
@@ -28,15 +29,13 @@
                 <tr>
                     <td>{{ producto.referencia }}</td>
                     <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.precio }} €</td>
                     <td>{{ producto.categoria }}</td>
                     <td class="main_table_esp_modificar">
                         <button><a href="/appGestionPedidos/modificar-producto/{{ producto.id }}">MODIFICAR</a></button>
                     </td>
                     <td class="main_table_esp_borrar">
                         <button><a href="/appGestionPedidos/eliminar-producto/{{ producto.id }}">BORRAR</a></button>
-                    </td>
-                    <td class="main_table_esp_detalles">
-                        <button><a href="/appGestionPedidos/detallesProducto/{{ producto.id }}">DETALLES</a></button>
                     </td>
                 </tr>
             </tbody>

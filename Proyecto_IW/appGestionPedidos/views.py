@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView, ListView
-from .models import Cliente, Componente, Producto, Pedido, ProductoPedido
+from .models import Cliente, Componente, Producto, Pedido, ProductoPedido, Categoria
 from .forms import ClienteForm, ComponenteForm, ProductoForm, PedidoForm, ProductoPedidoForm
 
 
@@ -14,6 +14,9 @@ class ClienteListView(ListView):
 class PedidoListView(ListView):
     model = Pedido
 
+class CategoriaListView(ListView):
+    model = Categoria
+
 class ProductoListView(ListView):
     model = Producto
 
@@ -22,9 +25,6 @@ class ComponenteListView(ListView):
 
 class ProductoPedidoDetailView(DetailView):
     model = Pedido
-
-class ProductoDetailView(DetailView):
-    model = Producto
 
 #____________________ CREAR ____________________
 
