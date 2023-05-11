@@ -4,24 +4,31 @@ from django.views import View
 from django.views.generic import DetailView, ListView
 from .models import Cliente, Componente, Producto, Pedido, ProductoPedido, Categoria
 from .forms import ClienteForm, ComponenteForm, ProductoForm, PedidoForm, ProductoPedidoForm
+from django.core.paginator import Paginator
+from django.shortcuts import render
+
 
 
 #___________________ VISUALIZAR LISTA ____________________
 
 class ClienteListView(ListView):
     model = Cliente
+    paginate_by = 1
 
 class PedidoListView(ListView):
     model = Pedido
+    paginate_by = 1
 
 class CategoriaListView(ListView):
     model = Categoria
-
+    
 class ProductoListView(ListView):
     model = Producto
+    paginate_by = 1
 
 class ComponenteListView(ListView):
     model = Componente
+    paginate_by = 1
 
 class ProductoPedidoDetailView(DetailView):
     model = Pedido
@@ -44,7 +51,10 @@ class ClienteCreateView(View):
             return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
     
-    
+
+
+
+
 class ComponenteCreateView(View):
 
     def get(self, request, *args, **kwargs):

@@ -49,6 +49,24 @@
         <p>No hay pedidos creados.</p>
         {% endif %}
     </div>
+
+    {% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="flecha_derecha"><i
+                class="fa-solid fa-angles-left"></i></a>
+        {% endif %}
+        {% for i in paginator.page_range %}
+        <a {% if page_obj.number == i %} class="active" {% endif %} href="?page={{i}}">{{ i }}</a>
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="flecha_izquierda"><i
+                class="fa-solid fa-angles-right"></i></a>
+         {% endif %}
+    </div>
+    {% endif %}
+
+    
 </div>
 
 {% endblock %}
