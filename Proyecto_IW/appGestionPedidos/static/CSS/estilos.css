@@ -67,6 +67,7 @@ header {
     max-width: 1300px;
     margin: 50px auto;
     text-align: justify;
+    justify-content: center;
 }
 
 .main_title_container {
@@ -124,7 +125,6 @@ header {
 .main_table_container {
     margin-top: 25px;
     display: flex;
-    justify-content: center;
     background-color: #d4d4d483;
     border-radius: 15px;
     border: solid 1px rgba(255. 255, 255, 0.2);
@@ -204,6 +204,24 @@ header {
     color:#52ae11;
     font-family: sans-serif;
     border-radius: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.pagination a {
+    padding: 5px;
+    font-size: large;
+    color: #575757;
+    justify-content: center;
+}
+
+.pagination a:hover {
+    color: #2172b9;
+    font-size: x-large;
 }
 
 /* MAIN_FORMULARIOS DE CREAR O MODIFICAR */
