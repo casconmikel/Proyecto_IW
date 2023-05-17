@@ -2,95 +2,116 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
-        <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
-        <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
-    </head>
-    <body>
-        <header class="header">
-            <div class="header_container">
-                <div class="header_logo"> 
-                    <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}" alt="logo de la compañia"></a>
-                </div>
-                <nav class="header_navigation">
-                    <ul>
-                        <li><a href="/appGestionPedidos">Clientes</a></li>
-                        <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
-                        <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
-                        <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
-                    </ul>
-                </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
+    <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
+    <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_container">
+            <div class="header_logo">
+                <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}"
+                        alt="logo de la compañia"></a>
             </div>
-            <div class="header_line"> 
-                <div class="header_line_blue"></div>
-                <div class="header_line_grey"></div>
-            </div>
-        </header>
+            <nav class="header_navigation">
+                <ul>
+                    <li><a href="/appGestionPedidos">Clientes</a></li>
+                    <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
+                    <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
+                    <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header_line">
+            <div class="header_line_blue"></div>
+            <div class="header_line_grey"></div>
+        </div>
+    </header>
 
-        <main>
-            {% block contenido %}{% endblock %}
-        </main>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
 
-        <footer class="footer">
-            <div class="footer_container">
-                <div class="footer_top">
-                    <div class="footer_top_container">
-                        <div class="footer_top_cc">
-                            <div class="footer_top_c">
-                                <h2>Menu</h2>
-                                <li><a href="/appGestionPedidos">Clientes</a></li>
-                                <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
-                                <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
-                                <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="footer_top">
+                <div class="footer_top_container">
+                    <div class="footer_top_cc">
+                        <div class="footer_top_c">
+                            <h2>Menu</h2>
+                            <li><a href="/appGestionPedidos">Clientes</a></li>
+                            <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
+                            <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
+                            <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+                        </div>
+                        <div class="footer_top_c">
+                            <h2>I+D+i</h2>
+                            <li><a href="https://www.google.es/" target="_blank">Proyectos I+D+i</a></li>
+                            <li><a href="https://www.google.es/" target="_blank">Programa de Innovación</a></li>
+                            <li><a href="https://www.google.es/" target="_blank">Innovación Tecnológica</a></li>
+                        </div>
+                        <div class="footer_top_c">
+                            <h2>Sostenibilidad</h2>
+                            <li><a href="https://www.google.es/" target="_blank">Compromiso</a></li>
+                            <li><a href="https://www.google.es/" target="_blank">Responsabilidad Social</a></li>
+                            <li><a href="https://www.google.es/" target="_blank">Sistema de Gestión</a></li>
+                        </div>
+                        <div class="footer_top_c">
+                            <h2>Contacto</h2>
+                            <li><a href="https://www.google.es/" target="_blank">Contacto</a></li>
+                            <li><a href="https://www.google.es/">Trabaja con nosotros</a></li>
+                        </div>
+                        <div class="footer_top_c_right">
+                            <div class="footer_logo">
+                                <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}"
+                                        alt="logo de la compañia en blanco y negro"></a>
                             </div>
-                            <div class="footer_top_c">
-                                <h2>I+D+i</h2>
-                                <li><a href="https://www.google.es/" target="_blank">Proyectos I+D+i</a></li>
-                                <li><a href="https://www.google.es/" target="_blank">Programa de Innovación</a></li>
-                                <li><a href="https://www.google.es/" target="_blank">Innovación Tecnológica</a></li>
-                            </div>
-                            <div class="footer_top_c">
-                                <h2>Sostenibilidad</h2>
-                                <li><a href="https://www.google.es/" target="_blank">Compromiso</a></li>
-                                <li><a href="https://www.google.es/" target="_blank">Responsabilidad Social</a></li>
-                                <li><a href="https://www.google.es/" target="_blank">Sistema de Gestión</a></li>
-                            </div>
-                            <div class="footer_top_c">
-                                <h2>Contacto</h2>
-                                <li><a href="https://www.google.es/" target="_blank">Contacto</a></li>
-                                <li><a href="https://www.google.es/">Trabaja con nosotros</a></li>
-                            </div>
-                            <div class="footer_top_c_right">
-                                <div class="footer_logo">
-                                    <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}" alt="logo de la compañia en blanco y negro"></a>
-                                </div>
-                                <div class="footer_top_line"></div>
-                                <div class="footer_top_SM">
-                                    <ul>
-                                        <li><a href="https://www.instagram.com/"><img src="{% static 'imagenes\icons8-instagram-50.png' %}" alt="Instagram icon"></a></li>
-                                        <li><a href="https://twitter.com/"><img src="{% static 'imagenes\icons8-twitter-50.png' %}" alt="Twitter icon"></a></li>
-                                        <li><a href="https://www.facebook.com/"><img src="{% static 'imagenes\icons8-facebook-50.png' %}" alt="Facebook icon"></a></li>
-                                        <li><a href="https://www.youtube.com/"><img src="{% static 'imagenes\icons8-youtube-play-50.png' %}" alt="YouTube icon"></a></li>
-                                        <li><a href="https://www.linkedin.com/"><img src="{% static 'imagenes\icons8-linkedin-50.png' %}" alt="LinkedIn icon"></a></li>
-                                    </ul>
-                                </div>
+                            <div class="footer_top_line"></div>
+                            <div class="footer_top_SM">
+                                <ul>
+                                    <li><a href="https://www.instagram.com/"><img
+                                                src="{% static 'imagenes\icons8-instagram-50.png' %}"
+                                                alt="Instagram icon"></a></li>
+                                    <li><a href="https://twitter.com/"><img
+                                                src="{% static 'imagenes\icons8-twitter-50.png' %}"
+                                                alt="Twitter icon"></a></li>
+                                    <li><a href="https://www.facebook.com/"><img
+                                                src="{% static 'imagenes\icons8-facebook-50.png' %}"
+                                                alt="Facebook icon"></a></li>
+                                    <li><a href="https://www.youtube.com/"><img
+                                                src="{% static 'imagenes\icons8-youtube-play-50.png' %}"
+                                                alt="YouTube icon"></a></li>
+                                    <li><a href="https://www.linkedin.com/"><img
+                                                src="{% static 'imagenes\icons8-linkedin-50.png' %}"
+                                                alt="LinkedIn icon"></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer_bottom">
-                    <ul>
-                        <li><a href="https://www.google.es/" target="_blank">Aviso legal</a></li> 
-                        <li><a href="https://www.google.es/" target="_blank">Política de privacidad</a></li>
-                        <li><a href="https://www.google.es/" target="_blank">Politica de cookies</a></li>
-                    </ul>
-                </div> 
             </div>
-        </footer> 
-    </body>
+            <div class="footer_bottom">
+                <ul>
+                    <li><a href="https://www.google.es/" target="_blank">Aviso legal</a></li>
+                    <li><a href="https://www.google.es/" target="_blank">Política de privacidad</a></li>
+                    <li><a href="https://www.google.es/" target="_blank">Politica de cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+   
+    <script src="{% static 'javascript/modificar_tamaño.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'javascript/notificacionBorrar.js' %}"></script>
+    
+</body>
+
+
 </html>
