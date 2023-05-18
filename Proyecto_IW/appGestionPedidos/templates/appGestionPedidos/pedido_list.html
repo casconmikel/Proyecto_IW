@@ -22,6 +22,7 @@
                     <th>Referencia</th>
                     <th>Fecha</th>
                     <th>Cliente</th>
+                    <th>Precio total</th>
                     <th class="main_table_esp_1" colspan="3">Opciones</th>
                 </tr>
             </thead>
@@ -32,6 +33,7 @@
                     <td>{{ pedido.referencia }}</td>
                     <td>{{ pedido.fecha }}</td>
                     <td>{{ pedido.cliente }}</td>
+                    <td>{{ pedido.precioTotal }}</td>
                     <td class="main_table_esp_modificar">
                         <button><a href="/appGestionPedidos/modificar-pedido/{{ pedido.id }}">MODIFICAR</a></button>
                     </td>
