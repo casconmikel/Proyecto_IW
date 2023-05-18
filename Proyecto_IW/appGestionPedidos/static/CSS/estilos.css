@@ -210,10 +210,11 @@ header {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    font-family: sans-serif;
 }
 
 .pagination a {
-    padding: 5px;
+    padding: 7px;
     font-size: large;
     color: #575757;
     justify-content: center;
@@ -221,7 +222,12 @@ header {
 
 .pagination a:hover {
     color: #2172b9;
-    font-size: x-large;
+    font-weight: 700;
+}
+
+.active {
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 /* MAIN_FORMULARIOS DE CREAR O MODIFICAR */
@@ -299,6 +305,7 @@ header {
 .main_form_button input:hover {
     border-color: #2172b9;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 
