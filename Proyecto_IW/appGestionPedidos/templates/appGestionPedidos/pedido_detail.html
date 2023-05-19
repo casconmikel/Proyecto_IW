@@ -8,9 +8,34 @@
 
 {% if pedido %}
 <div class="main_container">
-    <div class="main_title_container">
+    <div class="main_title_container_detail">
         <div class="main_title">
-            <h2>DETALLES DEL PEDIDO: {{ pedido.id }}</h2>
+            <div class="main_title_detail">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="main_title_detail_field">DETALLES DEL PEDIDO:</th>
+                            <th>{{ pedido.id }}</th>
+                        </tr>
+                        <tr>
+                            <td class="main_title_detail_field">REFERENCIA:</td>
+                            <td>{{ pedido.referencia }}</td>
+                        </tr>
+                        <tr>
+                            <td class="main_title_detail_field">FECHA:</td>
+                            <td>{{ pedido.fecha }}</td>
+                        </tr>
+                        <tr>
+                            <td class="main_title_detail_field">CLIENTE:</td>
+                            <td>{{ pedido.cliente }}</td>
+                        </tr>
+                        <tr>
+                            <td class="main_title_detail_field">PRECIO TOTAL:</td>
+                            <td>{{ pedido.precioTotal }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <a href="/appGestionPedidos/productoPedido/create" alt="crear_cliente">ASOCIAR PRODUCTO</a>   
     </div>

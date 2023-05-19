@@ -1,11 +1,14 @@
 from enum import unique
 from django.db import models
+from django.core.validators import MinLengthValidator, MinValueValidator, DecimalValidator
+
+
  
 class Cliente(models.Model):
-    CIF = models.CharField(max_length=9, unique=True)
+    CIF = models.CharField(max_length=9, unique=True, validators=[MinLengthValidator(9)])
     nombreEmpresa = models.CharField(max_length=16)
     direccion = models.CharField(max_length=60)
-    datosContacto = models.CharField(max_length=60)
+    datosContacto = models.CharField(max_length=60, validators=[MinLengthValidator(9)])
 
     def __str__(self):
        return f"{self.CIF} - {self.nombreEmpresa}" 
@@ -29,7 +32,7 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     referencia = models.IntegerField(unique=True)
-    precio = models.FloatField()
+    precio = models.FloatField(validators=[MinValueValidator(0.01)])
     nombre = models.CharField(max_length=16)
     descripcion = models.CharField(max_length=60)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
@@ -44,7 +47,7 @@ class Pedido(models.Model):
     producto = models.ManyToManyField(Producto, through="ProductoPedido")
     fecha = models.DateField()
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE) 
-    precioTotal = models.FloatField(blank=True, null=True)
+    precioTotal = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.01)])
 
     def __str__(self):
        return f"{self.id} - {self.fecha} - {self.cliente}" 
@@ -59,7 +62,7 @@ class Pedido(models.Model):
 class ProductoPedido(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idPedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
-    cantidad = models.IntegerField()
+    cantidad = models.IntegerField(validators=[MinValueValidator(1)])
 
     def __str__(self):
        return f"{self.id} - {self.idProducto} - {self.idPedido} - {self.cantidad}" 
