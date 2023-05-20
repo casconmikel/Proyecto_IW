@@ -6,23 +6,24 @@ const btnsEliminacion = document.querySelectorAll('.btnEliminacion');
             
             e.preventDefault();
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: '¿Estas seguro de que quieres borrar el registro?',
+                text: "¡No lo podras recuperar!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Sí, Borrar!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location = this.href;
 
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
+                    // Swal.fire(
+                    //     'Deleted!',
+                    //     'Your file has been deleted.',
+                    //     'success'
+                    // )
                 }
+                
             })
 
         })
