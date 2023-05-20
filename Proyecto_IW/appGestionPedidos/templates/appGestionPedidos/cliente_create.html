@@ -15,9 +15,9 @@
         {% csrf_token %}
         <div class="main_form_container">
             <div class="main_form_field">
-                {{ formulario.CIF.errors }}
                 <label for="{{ formulario.CIF.id_for_label }}">CIF: </label>
                 {{ formulario.CIF }}
+                {{ formulario.CIF.errors }}
             </div>
             <div class="main_form_field">
                 {{ formulario.nombreEmpresa.errors }}

@@ -22,6 +22,7 @@ class ComponenteForm(forms.ModelForm):
             'marca': forms.TextInput(attrs={'placeholder': 'Ej.: Intel'}),
         }
 
+
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
