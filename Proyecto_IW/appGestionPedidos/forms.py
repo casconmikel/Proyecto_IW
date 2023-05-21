@@ -17,7 +17,7 @@ class ComponenteForm(forms.ModelForm):
         model = Componente
         fields = '__all__'
         widgets = {
-            'codigoReferencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471R'}),
+            'codigoReferencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471'}),
             'nombreModelo': forms.TextInput(attrs={'placeholder': 'Ej.: Procesador i5 '}),
             'marca': forms.TextInput(attrs={'placeholder': 'Ej.: Intel'}),
         }
@@ -28,7 +28,7 @@ class ProductoForm(forms.ModelForm):
         model = Producto
         fields = '__all__'
         widgets = {
-            'referencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471R93-T'}),
+            'referencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471793'}),
             'precio': forms.TextInput(attrs={'placeholder': 'Ej.: 549.99'}),
             'nombre': forms.TextInput(attrs={'placeholder': 'Ej.: Travel Mate'}),
             'descripcion': forms.TextInput(attrs={'placeholder': 'Ej.: Ordenador portatil 14" '}),
@@ -41,7 +41,7 @@ class PedidoForm(forms.ModelForm):
         model = Pedido
         exclude= ['producto']
         widgets = {
-            'referencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471342Q'}),
+            'referencia': forms.TextInput(attrs={'placeholder': 'Ej.: 471342'}),
             'fecha': forms.DateInput(attrs={'placeholder': 'Ej.: 2023-01-25'}),
             # 'cliente': forms.ListInput(attrs={'placeholder': 'Ej.: Intel'}),
             'precioTotal': forms.NumberInput(attrs={'placeholder': 'Ej.: 549.99'}),

@@ -9,21 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/modoNoche.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/darkmode.css' %}">
     <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
     <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
 </head>
 
-<body class="oscuro">
-    <header class="header">
+<body>
+    <header class="header ">
         <div class="header_container">
             <div class="header_logo">
                 <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}"
                         alt="logo de la compañia"></a>
             </div>
             <div>
-                <button>Dia</button>
-                <button>Noche</button>
+                <a id="modoOscuro" href="javascript:void(0)">efg</a>
+                
             </div>
             <nav class="header_navigation">
                 <ul>
@@ -112,7 +112,7 @@
         </div>
     </footer>
 
-    <script src="{% static 'javascript/modificar_tamaño.js' %}"></script>
+    <script src="{% static 'javascript/modoNoche_dia.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{% static 'javascript/notificacionBorrar.js' %}"></script>
 
