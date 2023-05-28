@@ -4,6 +4,10 @@ a:visited {
     text-decoration: none;
 }
 
+body {
+    margin: 0px 0px;
+}
+
 /* --------------  HEADER  -------------- */
 
 header {
@@ -11,8 +15,8 @@ header {
     color: #333;
 }
 
-
 .header_container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -360,19 +364,11 @@ header {
     cursor: pointer;
 }
 
-/* modo nochey dia */
-
-
-
-
-
-
-
-
-
-
-
 /* --------------  FOOTER  -------------- */
+
+.footer {
+    font-family: sans-serif;
+}
 
 .footer a {
     color: #575757
@@ -399,13 +395,14 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 30px;
+}
+
+.footer_top_c li {
+    padding: 3px;
 }
 
 .footer_top_c {
-    width: auto;
-    padding: 0 30px;
-    padding-top: 45px;
-    align-items: center;
     list-style: none;
 }
 
