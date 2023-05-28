@@ -8,7 +8,6 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 
 
-
 #___________________ VISUALIZAR LISTA ____________________
 
 class ClienteListView(ListView):
@@ -51,10 +50,6 @@ class ClienteCreateView(View):
             return redirect('index')
         return render(request, 'appGestionPedidos/cliente_create.html', {'formulario': formulario})
     
-
-
-
-
 class ComponenteCreateView(View):
 
     def get(self, request, *args, **kwargs):
@@ -86,7 +81,6 @@ class ProductoCreateView(View):
             formulario.save()
             return redirect('producto')
         return render(request, 'appGestionPedidos/producto_create.html', {'formulario': formulario})
-
 
 class PedidoCreateView(View):
 

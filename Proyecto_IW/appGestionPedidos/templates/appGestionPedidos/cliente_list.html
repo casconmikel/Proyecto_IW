@@ -22,7 +22,8 @@
                     <th>CIF</th>
                     <th>Nombre</th>
                     <th>Direccion</th>
-                    <th>Contacto</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
                     <th class="main_table_esp_1" colspan="2">Opciones</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{ cliente.nombreEmpresa }}</td>
                     <td>{{ cliente.direccion }}</td>
                     <td>{{ cliente.datosContacto }}</td>
+                    <td>{{ cliente.email }}</td>
                     <td class="main_table_esp_modificar">
                         <button><a href="/appGestionPedidos/modificar-cliente/{{ cliente.id }}">MODIFICAR</a></button>
                     </td>

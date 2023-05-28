@@ -129,3 +129,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Para poder mandar email de confirmación al cliente registrado
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # SMTP de gmail
+EMAIL_PORT = 587  
+EMAIL_HOST_USER = 'mcm.lab.mercadona@gmail.com'  # Correo emisor
+EMAIL_HOST_PASSWORD = 'kdiywawihvkwzeea'  # "Contraseña de aplicación" (google)
+EMAIL_USE_TLS = True  # TLS para cifrar la conexión

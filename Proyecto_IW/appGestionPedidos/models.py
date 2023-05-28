@@ -9,6 +9,7 @@ class Cliente(models.Model):
     nombreEmpresa = models.CharField(max_length=16)
     direccion = models.CharField(max_length=60)
     datosContacto = models.CharField(max_length=60, validators=[MinLengthValidator(9)])
+    email = models.EmailField(max_length=254)
 
     def __str__(self):
        return f"{self.CIF} - {self.nombreEmpresa}" 
