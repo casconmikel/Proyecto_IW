@@ -17,11 +17,6 @@ const btnsEliminacion = document.querySelectorAll('.btnEliminacion');
                 if (result.isConfirmed) {
                     window.location = this.href;
 
-                    // Swal.fire(
-                    //     'Deleted!',
-                    //     'Your file has been deleted.',
-                    //     'success'
-                    // )
                 }
                 
             })

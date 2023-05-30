@@ -7,10 +7,10 @@ class ClienteForm(forms.ModelForm):
         model = Cliente
         fields = '__all__'
         widgets = {
-            'CIF': forms.TextInput(attrs={'placeholder': 'Ej.: A12147193'}),
+            'CIF': forms.TextInput(attrs={'placeholder': 'Ej.: A12147193', 'id': 'cif'}),
             'nombreEmpresa': forms.TextInput(attrs={'placeholder': 'Ej.: Forjas Alavesas'}),
             'direccion': forms.TextInput(attrs={'placeholder': 'Ej.: Calle Postas 4'}),
-            'datosContacto': forms.NumberInput(attrs={'placeholder': 'Ej.: 660862421'}),
+            'datosContacto': forms.NumberInput(attrs={'placeholder': 'Ej.: 660862421', 'id': 'tel'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Ej.: elnano33@gmail.com'}),
         }
     

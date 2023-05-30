@@ -11,11 +11,11 @@
         <h2>Nuevo cliente</h2>
         <div class="main_line_blue"></div>
     </div>
-    <form class="main_form" action="{% url 'cliente_create' %}" method="POST">
+    <form id="formulario" class="main_form" action="{% url 'cliente_create' %}" method="POST">
         {% csrf_token %}
         <div class="main_form_container">
             <div class="main_form_field">
-                <label for="{{ formulario.CIF.id_for_label }}">CIF: </label>
+                <label  for="{{ formulario.CIF.id_for_label }}">CIF: </label>
                 {{ formulario.CIF }}
                 {{ formulario.CIF.errors }}
             </div>
@@ -30,9 +30,9 @@
                 {{ formulario.direccion }}
             </div>
             <div class="main_form_field">
-                {{ formulario.datosContacto.errors }}
                 <label for="{{ formulario.datosContacto.id_for_label }}">Telefono: </label>
                 {{ formulario.datosContacto }}
+                {{ formulario.datosContacto.errors }}
             </div>
             <div class="main_form_field">
                 {{ formulario.email.errors }}

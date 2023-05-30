@@ -11,13 +11,14 @@
         <h2>Modificar cliente</h2>
         <div class="main_line_blue"></div>
     </div>
-    <form class="main_form" action="" method="post">
+    <form id="formulario2" class="main_form" action="" method="post">
         {% csrf_token %}
         <div class="main_form_container">
             <div class="main_form_field">
-                {{ formulario.CIF.errors }}
+                
                 <label for="{{ formulario.CIF.id_for_label }}">CIF: </label>
                 {{ formulario.CIF }}
+                {{ formulario.CIF.errors }}
             </div>
             <div class="main_form_field">
                 {{ formulario.nombreEmpresa.errors }}
@@ -33,6 +34,11 @@
                 {{ formulario.datosContacto.errors }}
                 <label for="{{ formulario.datosContacto.id_for_label }}">Telefono: </label>
                 {{ formulario.datosContacto }}
+            </div>
+            <div class="main_form_field">
+                {{ formulario.email.errors }}
+                <label for="{{ formulario.email.id_for_label }}">Email: </label>
+                {{ formulario.email }}
             </div>
         </div>
         <div class="main_form_button">
