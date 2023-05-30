@@ -12,22 +12,22 @@ from django.shortcuts import render
 
 class ClienteListView(ListView):
     model = Cliente
-    paginate_by = 2
+    paginate_by = 4
 
 class PedidoListView(ListView):
     model = Pedido
-    paginate_by = 2
+    paginate_by = 4
 
 class CategoriaListView(ListView):
     model = Categoria
     
 class ProductoListView(ListView):
     model = Producto
-    paginate_by = 2
+    paginate_by = 4
 
 class ComponenteListView(ListView):
     model = Componente
-    paginate_by = 2
+    paginate_by = 4
 
 class ProductoPedidoDetailView(DetailView):
     model = Pedido

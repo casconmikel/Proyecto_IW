@@ -8,7 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/estilos_base.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/estilos_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/estilos_header.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/estilos_main.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/media_queries.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/darkmode.css' %}">
     <title>{% block titulo %}Gestor de Pedidos{% endblock %}</title>
     <link rel="icon" type="image/jfif" href="{% static 'imagenes/fabicon.png' %}">
@@ -18,19 +22,15 @@
     <header class="header ">
         <div class="header_container">
             <div class="header_logo">
-                <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}"
-                        alt="logo de la compañia"></a>
-            </div>
-            <div>
-                <a id="modoOscuro" href="javascript:void(0)">efg</a>
-                
+                <a href="/appGestionPedidos"><img src="{% static 'imagenes\Logotipo.png' %}" alt="logo de la compañia"></a>
             </div>
             <nav class="header_navigation">
                 <ul>
-                    <li><a href="/appGestionPedidos">Clientes</a></li>
-                    <li><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
-                    <li><a href="/appGestionPedidos/producto/list">Productos</a></li>
-                    <li><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+                    <li class="header_navigation_option"><a href="/appGestionPedidos">Clientes</a></li>
+                    <li class="header_navigation_option"><a href="/appGestionPedidos/pedido/list">Pedidos</a></li>
+                    <li class="header_navigation_option"><a href="/appGestionPedidos/producto/list">Productos</a></li>
+                    <li class="header_navigation_option"><a href="/appGestionPedidos/componente/list">Componentes</a></li>
+                    <li id="header_darkMode_icon"><a id="modoOscuro" href="javascript:void(0)"><img src="{% static 'imagenes\DarkMode.png' %}" alt="Logo DarkMode"></a></li>
                 </ul>
             </nav>
         </div>
