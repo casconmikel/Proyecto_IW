@@ -206,7 +206,7 @@
 .pagination a {
     padding: 7px;
     font-size: large;
-    color: #575757;
+    color: #040404;
     justify-content: center;
 }
 
@@ -257,7 +257,7 @@
 .main_form_field label {
     font-size: 18px;
     margin-bottom: 3px;
-    color: #2172b9;
+    color: #00335f;
 }
 
 .main_form_field input {

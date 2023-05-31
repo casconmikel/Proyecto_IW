@@ -32,6 +32,20 @@ document.addEventListener("DOMContentLoaded", function() {
     
       return false;
     }
+    // comporbacion de que el cif no tiene ningun caracter extraño
+    var caracteres = cif.substr(1,8);
+    if (!/^\d+$/.test(caracteres)) {
+      e.preventDefault();
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'El cif debe estar compuesto por numeros.',
+        })
+  
+    return false;
+    }
+  
+    
     if (telefono.length !== 9) {
         e.preventDefault();
         Swal.fire({
@@ -41,6 +55,17 @@ document.addEventListener("DOMContentLoaded", function() {
           })
     
       return false;
+    }
+    var car_tel = cif.substr(0,8);
+    if (!/^\d+$/.test(car_tel)) {
+      e.preventDefault();
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'El telefono debe estar compuesto por números.',
+        })
+  
+    return false;
     }
         
   }

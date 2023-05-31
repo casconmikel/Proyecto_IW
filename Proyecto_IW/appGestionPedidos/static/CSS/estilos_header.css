@@ -2,7 +2,7 @@
 /* --------------  HEADER  -------------- */
 
 header {
-    background-color: whitesmoke;
+    background-color: #c6c6c6;
     color: #333;
 }
 
@@ -18,7 +18,7 @@ header {
 }
 
 .header_line_blue {
-    background-color: #2172b9;
+    background-color: #0362b4;
     height: 8px;
 }
 
